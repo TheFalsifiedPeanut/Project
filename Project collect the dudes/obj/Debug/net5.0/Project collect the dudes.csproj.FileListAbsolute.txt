@@ -1,0 +1,5 @@
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.csproj.AssemblyReference.cache
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.AssemblyInfoInputs.cache
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.AssemblyInfo.cs
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.csproj.CoreCompileInputs.cache
