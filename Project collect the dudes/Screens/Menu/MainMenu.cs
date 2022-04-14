@@ -6,11 +6,14 @@ namespace Collect_Dudes.Screens.Menu
     using System.Collections.Generic;
     using System.Text;
     using Utilities;
+    using ConsoleUtilities;
+    
     class MainMenu : Screen
     {
         public override void Render()
         {
-            Console.WriteLine(" 1. A \n 2. B\n 3. C");
+            Colours.ColourLine(Colours.BlueFG + "Play");
+            Console.WriteLine(" 1. Play \n 2. Exit \n 3. Delete");
             int result = TextUtils.GetChoice("Pick your favourite letter!", 3);
             switch (result)
             {
