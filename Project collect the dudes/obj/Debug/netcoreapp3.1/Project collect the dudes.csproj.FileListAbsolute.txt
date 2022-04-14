@@ -1,0 +1,14 @@
+C:\Users\georg\source\repos\Project\Project collect the dudes\bin\Debug\netcoreapp3.1\Project collect the dudes.exe
+C:\Users\georg\source\repos\Project\Project collect the dudes\bin\Debug\netcoreapp3.1\Project collect the dudes.deps.json
+C:\Users\georg\source\repos\Project\Project collect the dudes\bin\Debug\netcoreapp3.1\Project collect the dudes.runtimeconfig.json
+C:\Users\georg\source\repos\Project\Project collect the dudes\bin\Debug\netcoreapp3.1\Project collect the dudes.runtimeconfig.dev.json
+C:\Users\georg\source\repos\Project\Project collect the dudes\bin\Debug\netcoreapp3.1\Project collect the dudes.dll
+C:\Users\georg\source\repos\Project\Project collect the dudes\bin\Debug\netcoreapp3.1\Project collect the dudes.pdb
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.csproj.AssemblyReference.cache
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.AssemblyInfoInputs.cache
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.AssemblyInfo.cs
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.csproj.CoreCompileInputs.cache
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.dll
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.pdb
+C:\Users\georg\source\repos\Project\Project collect the dudes\obj\Debug\netcoreapp3.1\Project collect the dudes.genruntimeconfig.cache
