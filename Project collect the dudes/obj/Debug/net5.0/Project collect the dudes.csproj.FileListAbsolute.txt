@@ -22,3 +22,17 @@ C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project c
 C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.pdb
 C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.genruntimeconfig.cache
 C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net5.0\ref\Project collect the dudes.dll
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\Project collect the dudes.exe
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\Project collect the dudes.deps.json
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\Project collect the dudes.runtimeconfig.json
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\Project collect the dudes.runtimeconfig.dev.json
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\Project collect the dudes.dll
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\Project collect the dudes.pdb
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\ConsoleUtilities.dll
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net5.0\ConsoleUtilities.pdb
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.csproj.CopyComplete
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.dll
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\refint\Project collect the dudes.dll
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.pdb
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\Project collect the dudes.genruntimeconfig.cache
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net5.0\ref\Project collect the dudes.dll

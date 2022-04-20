@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UtaW1k3iJP0fn11PF5ex/COAufIu+TFtDxPXnJCDbQtuG8epNLa/fceGJESxwQq+NwYGIlFfXGOPZxWCdcisUw==",
+  "dgSpecHash": "96K9ZoulbDRar/k1W67Zbmr3a0Y5uOjMtPhsmIjb4gtQa90CMLsUj2GBveNXeV7XKwDi/lpv1VVNznAHjLNVWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Scooter M8\\Desktop\\Console Projects\\Collect The Dudes\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Scooter M8\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\georg\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

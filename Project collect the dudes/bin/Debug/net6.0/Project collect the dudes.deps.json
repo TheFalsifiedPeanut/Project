@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Project collect the dudes/1.0.0": {
+        "dependencies": {
+          "ConsoleUtilities": "1.0.0.0"
+        },
+        "runtime": {
+          "Project collect the dudes.dll": {}
+        }
+      },
+      "ConsoleUtilities/1.0.0.0": {
+        "runtime": {
+          "ConsoleUtilities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Project collect the dudes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConsoleUtilities/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
