@@ -16,3 +16,4 @@ C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net6
 C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.pdb
 C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.genruntimeconfig.cache
 C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net6.0\ref\Project collect the dudes.dll
+C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net6.0\Newtonsoft.Json.dll

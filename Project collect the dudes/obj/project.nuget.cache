@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "96K9ZoulbDRar/k1W67Zbmr3a0Y5uOjMtPhsmIjb4gtQa90CMLsUj2GBveNXeV7XKwDi/lpv1VVNznAHjLNVWg==",
+  "dgSpecHash": "PMWsR2L+NaCKil3ip8xdxow+j1BN6Lnd8weQfnp0S2q+hlipUhmRIIhz2PEomCza6zFbXgHzXhteQBRubncm+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\georg\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\georg\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
