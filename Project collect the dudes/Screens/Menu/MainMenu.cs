@@ -8,6 +8,7 @@ namespace Collect_Dudes.Screens.Menu
     using Utilities;
     using ConsoleUtilities.Inputs;
     using ConsoleUtilities.Colour;
+    using ConsoleUtilities.Screens;
 
     class MainMenu : Screen
     {
@@ -21,8 +22,7 @@ namespace Collect_Dudes.Screens.Menu
             switch (choice)
             {
                 case 0:
-                    ScreenManager.GetScreenManager().EnqueueScreen(new PlayMenu());
-                    ScreenManager.GetScreenManager().RenderNextScreen();
+                    ScreenManager.QuickRender(new PlayMenu());
                     break;
                 case 1:
                     Environment.Exit(0);

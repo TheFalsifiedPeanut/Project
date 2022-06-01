@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleUtilities.Inputs;
+using ConsoleUtilities.Screens
 
 namespace Collect_Dudes.Screens.Menu
 {
@@ -26,8 +27,7 @@ namespace Collect_Dudes.Screens.Menu
                     Console.WriteLine("Loading Saved Game...");
                     break;
                 case 2:
-                    ScreenManager.GetScreenManager().EnqueueScreen(new MainMenu());
-                    ScreenManager.GetScreenManager().RenderNextScreen();
+                    ScreenManager.QuickRender(new MainMenu());
                     break;
             }
         }

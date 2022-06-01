@@ -24,13 +24,13 @@ namespace Collect_Dudes.Utilities
             {
                 if ( inputValue < 0 && inputValue >= optionCount)
                 {
-                    Console.WriteLine("Error you donkey. The input value was not in range");
+                    Console.WriteLine("Error. The input value was not in range");
                     return GetChoice(inputMessage, optionCount, clearScreen);
                 }
             }
             else
             {
-                Console.WriteLine("Error you donkey. The input value was not a number. Learn how 2 read");
+                Console.WriteLine("Error. The input value was not a number. Learn how 2 read");
                 return GetChoice(inputMessage, optionCount, clearScreen);
             }
             return inputValue;

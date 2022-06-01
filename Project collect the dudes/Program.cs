@@ -1,9 +1,8 @@
 ﻿namespace Collect_Dudes
 {
-    using Screens;
     using Screens.Menu;
     using System;
-    using ConsoleUtilities;
+    using ConsoleUtilities.Screens;
     using Serialization;
     using Data.Player;
 
@@ -12,8 +11,8 @@
         static void Main(string[] args)
         {
             new ScreenManager();
-            ScreenManager.GetScreenManager().EnqueueScreen(new MainMenu());
-            ScreenManager.GetScreenManager().RenderNextScreen();
+            ScreenManager.QuickRender(new MainMenu());
+            
             /*Player[] players = new Player[3];
             players[0] = new Player("Namer", 32, 13, 2023);
             players[1] = new Player("Named", 0, 0, 0000);
