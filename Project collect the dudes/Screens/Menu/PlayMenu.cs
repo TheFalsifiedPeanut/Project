@@ -26,8 +26,8 @@
             switch (choice)
             {
                 case 0:
-                    Console.WriteLine("Loading New Game...");
-                    
+                    ScreenManager.QuickRender(new Overworld());
+
                     break;
                 
                 case 1:

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "JohnJohn",
+    "day": 1,
+    "month": 2,
+    "year": 3,
+    "strength": 10,
+    "agility": 10,
+    "willPower": 10,
+    "morale": 0,
+    "happiness": 1,
+    "mentalTraits": 0,
+    "leadership": 0,
+    "teamwork": 0
+  },
+  {
+    "name": "JimJim",
+    "day": 12,
+    "month": 11,
+    "year": 10,
+    "strength": 1,
+    "agility": 1,
+    "willPower": 1,
+    "morale": 4,
+    "happiness": 4,
+    "mentalTraits": 0,
+    "leadership": 0,
+    "teamwork": 0
+  },
+  {
+    "name": "JoeJoe",
+    "day": 13,
+    "month": 9,
+    "year": 2001,
+    "strength": 9,
+    "agility": 11,
+    "willPower": 10,
+    "morale": 2,
+    "happiness": 3,
+    "mentalTraits": 0,
+    "leadership": 0,
+    "teamwork": 0
+  }
+]

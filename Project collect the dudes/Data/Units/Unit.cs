@@ -10,17 +10,32 @@ namespace Collect_Dudes.Data.Units
 {
     internal class Unit : IAge
     {
+
+        public Unit(string name, int day, int month, int year, byte strength, byte agility, byte willPower, Morale morale, Happiness happiness)
+        {
+            this.name = name;
+            this.day = day;
+            this.month = month;
+            this.year = year;
+            this.strength = strength;
+            this.agility = agility;
+            this.willPower = willPower;
+            this.morale = morale;
+            this.happiness = happiness;
+
+        }
+
         #region General
-        string name;
+        public string name { get; set; }
         public int day { get; set; }
         public int month { get; set; }
         public int year { get; set; }
         #endregion
 
         #region Attributes
-        byte strength;
-        byte agility;
-        byte willPower;
+        public byte strength { get; set; }
+        public byte agility { get; set; }
+        public byte willPower { get; set; }
         #endregion
 
         #region Statistics
@@ -38,10 +53,11 @@ namespace Collect_Dudes.Data.Units
         #endregion
 
         #region Mental Statistics
-        Morale morale;
-        Happiness happiness;
-        byte leadership;
-        byte teamwork;
+        public Morale morale { get; set; }
+        public Happiness happiness { get; set; }
+        public MentalTraits mentalTraits { get; set; }
+        public byte leadership { get; set; }
+        public byte teamwork { get; set; }
         #endregion
 
         #region MyRegion

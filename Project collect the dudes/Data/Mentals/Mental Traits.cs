@@ -17,7 +17,9 @@ namespace Collect_Dudes.Data.Mentals
         Sly,
         Oportunistic,
         Honourable,
-
+        Merciful,
+        Cold,
+        
 
     }
 }
