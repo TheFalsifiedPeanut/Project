@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Collect_Dudes.Data.Information
 {
-    interface IAge
+    internal interface IAge
     {
         int day { get; set; }
         int month { get; set; }

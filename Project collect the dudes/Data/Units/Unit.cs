@@ -8,7 +8,7 @@ using Collect_Dudes.Data.Mentals;
 
 namespace Collect_Dudes.Data.Units
 {
-    class Unit : IAge
+    internal class Unit : IAge
     {
         #region General
         string name;

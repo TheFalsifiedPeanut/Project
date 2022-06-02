@@ -10,7 +10,7 @@ using System.IO;
 
 namespace Collect_Dudes.Serialization
 {
-    static class Save<T>
+    internal static class Save<T>
     {
         
         public static void SaveData(T data, string path)

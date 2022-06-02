@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Collect_Dudes.Data.Mentals
 {
-    enum Happiness
+    internal enum Happiness
     {
         Miserable,
         Sad,

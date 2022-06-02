@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Collect_Dudes.Data.Player
 {
-    class Player
+    internal class Player
     {
         public string name;
         public int day;

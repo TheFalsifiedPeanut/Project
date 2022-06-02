@@ -1,18 +1,30 @@
 ﻿namespace Collect_Dudes
 {
+    using ConsoleUtilities.Colours;
     using Screens.Menu;
     using System;
     using ConsoleUtilities.Screens;
+    using ConsoleUtilities.Serialisation;
     using Serialization;
     using Data.Player;
 
-    class Program
+    internal static class Program
     {
         static void Main(string[] args)
         {
+            // Determine if the advance colour mode is not active and activate it per the system requirements.
+            if (!ColourUtilities.IsAdvancedColourModeEnabled())
+            {
+                Console.Write("Test");
+                ColourUtilities.EnableAdvancedColourMode();
+            }
+            
             new ScreenManager();
             ScreenManager.QuickRender(new MainMenu());
             
+            JSONData<Player>.SaveData(new Player("Phil", 0, 1, 2), "Player/Player.json");
+            JSONData<Player[]>.SaveData(new Player[2] { new Player("Phil", 0, 1, 2), new Player("Phil", 0, 1, 2) }, "Player/Player2.json");
+
             /*Player[] players = new Player[3];
             players[0] = new Player("Namer", 32, 13, 2023);
             players[1] = new Player("Named", 0, 0, 0000);

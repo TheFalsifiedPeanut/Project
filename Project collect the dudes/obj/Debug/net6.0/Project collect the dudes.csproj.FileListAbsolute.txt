@@ -17,3 +17,22 @@ C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net6
 C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.genruntimeconfig.cache
 C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\obj\Debug\net6.0\ref\Project collect the dudes.dll
 C:\Users\georg\Documents\GitHub\Project\Project collect the dudes\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\Project collect the dudes.exe
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\Project collect the dudes.deps.json
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\Project collect the dudes.runtimeconfig.json
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\Project collect the dudes.dll
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\Project collect the dudes.pdb
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\ConsoleUtilities.dll
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\bin\Debug\net6.0\ConsoleUtilities.pdb
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.csproj.AssemblyReference.cache
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.AssemblyInfoInputs.cache
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.AssemblyInfo.cs
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.csproj.CoreCompileInputs.cache
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.csproj.CopyComplete
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.dll
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\refint\Project collect the dudes.dll
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.pdb
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\Project collect the dudes.genruntimeconfig.cache
+C:\Users\Scooter M8\Desktop\Console Projects\Collect The Dudes\Project\Project collect the dudes\obj\Debug\net6.0\ref\Project collect the dudes.dll

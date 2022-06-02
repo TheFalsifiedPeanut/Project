@@ -1,11 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Collect_Dudes.Utilities
+﻿namespace Collect_Dudes.Utilities
 {
-    class TextUtils
+    using ConsoleUtilities.Inputs;
+    using System;
+    
+    /// <summary>
+    /// Utilities for text related functionality and styling.
+    /// </summary>
+    internal static class TextUtils
     {
+        #region Fields
+        
+        /// <summary>
+        /// A dashed line divider.
+        /// </summary>
+        public static string divider => "----------";
+
+        #endregion
+
+        #region Choices Entry
+
+        /// <summary>
+        /// Build a choice entry with default styling.
+        /// </summary>
+        /// <param name="message"> The message to pass to the choice entry, to be displayed. </param>
+        /// <returns></returns>
+        public static ChoiceEntry BuildChoiceEntry(string message)
+        {
+            return new ChoiceEntry("[", "]", message);
+        }
+
+        #endregion
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputMessage"></param>
+        /// <param name="optionCount"></param>
+        /// <param name="clearScreen"></param>
+        /// <returns></returns>
         public static int GetChoice(string inputMessage, int optionCount, bool clearScreen = false)
         {
             if (clearScreen)
