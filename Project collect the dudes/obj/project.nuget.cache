@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1gjDL6/Z4T389Cpakx3Ld4MK1PMJzi3Qpjn+BQgRX6WSgD4StOWVl6W+1P8acKmlHKIKDid/weoAhtRr0lIlhA==",
+  "dgSpecHash": "Mc4knD0bMNfDaVLVxrDWtIvzKnXFBD7fLSRNze18/6P6O6ncCy+8blcpuLojaD3hhbozFhbO7J3pATg0q7kEag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Scooter M8\\Desktop\\Console Projects\\Collect The Dudes\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
+  "projectFilePath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Scooter M8\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\georg\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

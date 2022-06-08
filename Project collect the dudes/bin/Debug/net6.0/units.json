@@ -1,9 +1,7 @@
 [
   {
     "name": "JohnJohn",
-    "day": 1,
-    "month": 2,
-    "year": 3,
+    "birthday": {},
     "strength": 10,
     "agility": 10,
     "willPower": 10,
@@ -15,9 +13,7 @@
   },
   {
     "name": "JimJim",
-    "day": 12,
-    "month": 11,
-    "year": 10,
+    "birthday": {},
     "strength": 1,
     "agility": 1,
     "willPower": 1,
@@ -29,9 +25,7 @@
   },
   {
     "name": "JoeJoe",
-    "day": 13,
-    "month": 9,
-    "year": 2001,
+    "birthday": {},
     "strength": 9,
     "agility": 11,
     "willPower": 10,

@@ -10,7 +10,7 @@
         /// <summary>
         /// The path to the units file.
         /// </summary>
-        public static string UnitsPath => "SaveData/units.json";
+        public static string UnitsPath => "units.json";
 
         #endregion
 

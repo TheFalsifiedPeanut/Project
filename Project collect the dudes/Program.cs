@@ -8,6 +8,8 @@
     using Serialization;
     using Data.Player;
     using Collect_Dudes.Data.Units;
+    using Date = World.Date;
+    using Time = World.Time;
 
     internal static class Program
     {
@@ -22,15 +24,16 @@
             
             new ScreenManager();
             ScreenManager.QuickRender(new MainMenu());
+            new Time(0,0,0);
 
-            //Unit[] units = new Unit[]
-            //{
-            //    new Unit("JohnJohn", 1, 2, 3, 10, 10, 10, Data.Mentals.Morale.Shattered, Data.Mentals.Happiness.Sad), 
-            //    new Unit("JimJim", 12, 11, 10, 1, 1, 1, Data.Mentals.Morale.Confident, Data.Mentals.Happiness.Ecstatic),
-            //    new Unit("JoeJoe", 13, 9, 2001, 9, 11, 10, Data.Mentals.Morale.Neutral, Data.Mentals.Happiness.Happy)
-            //};
-            //
-            //JSONData<Unit[]>.SaveData(units, InternalSettings.UnitsPath);
+            Unit[] units = new Unit[]
+            {
+                new Unit("JohnJohn", new Date(5,1,12), 10, 10, 10, Data.Mentals.Morale.Shattered, Data.Mentals.Happiness.Sad), 
+                new Unit("JimJim", new Date(9,4,1923), 1, 1, 1, Data.Mentals.Morale.Confident, Data.Mentals.Happiness.Ecstatic),
+                new Unit("JoeJoe", new Date(28,8,2025), 9, 11, 10, Data.Mentals.Morale.Neutral, Data.Mentals.Happiness.Happy)
+            };
+            
+            JSONData<Unit[]>.SaveData(units, InternalSettings.UnitsPath);
 
 
 
