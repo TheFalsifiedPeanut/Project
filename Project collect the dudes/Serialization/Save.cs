@@ -12,7 +12,6 @@ namespace Collect_Dudes.Serialization
 {
     internal static class Save<T>
     {
-        
         public static void SaveData(T data, string path)
         {
            JObject jsonObject = (JObject)JToken.FromObject(data);

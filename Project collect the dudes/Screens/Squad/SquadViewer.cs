@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Collect_Dudes.Data.Units;
-using Collect_Dudes.Serialization;
-using Collect_Dudes.Utilities;
-using ConsoleUtilities.Inputs;
-using ConsoleUtilities.Screens;
-using ConsoleUtilities.Serialisation;
-
-namespace Collect_Dudes.Screens.Squad
+﻿namespace Collect_Dudes.Screens.Squad
 {
+    using System;
+    using System.Collections.Generic;
+    using Data.Units;
+    using Serialization;
+    using Utilities;
+    using ConsoleUtilities.Inputs;
+    using ConsoleUtilities.Screens;
+    using ConsoleUtilities.Serialisation;
+    using Data.Information;
+
     class SquadViewer : Screen
     {
         public override void Render()
@@ -19,7 +17,7 @@ namespace Collect_Dudes.Screens.Squad
             Unit[] units = JSONData<Unit[]>.LoadData(InternalSettings.UnitsPath);
             foreach (Unit unit in units)
             {
-                Console.WriteLine(unit.name + " | " + unit.year + " | " + unit.strength + " | " + unit.agility + " | " + unit.willPower + " | " + unit.morale + " | " + unit.happiness);                       
+                Console.WriteLine(unit.name + " | " + ((IAge)unit).age + " | " + unit.strength + " | " + unit.agility + " | " + unit.willPower + " | " + unit.morale + " | " + unit.happiness);                       
             }
             byte choice = Inputs.ChoiceDialogue("This is a choice?", TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry>
             {

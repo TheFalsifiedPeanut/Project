@@ -1,14 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.Serialization
+﻿namespace Collect_Dudes.Serialization
 {
+    /// <summary>
+    /// Settings used internally by the game.
+    /// </summary>
     internal class InternalSettings
     {
-        public static string UnitsPath => "units.json";
+        #region Paths
         
+        /// <summary>
+        /// The path to the units file.
+        /// </summary>
+        public static string UnitsPath => "SaveData/units.json";
+
+        #endregion
+
+        #region Time
+
+        /// <summary>
+        /// The number of days in a month.
+        /// </summary>
+        public static byte daysInMonth => 28;
+
+        /// <summary>
+        /// The number of months in a year.
+        /// </summary>
+        public static byte monthsInYear => 12;
+
+        #endregion
     }
 }

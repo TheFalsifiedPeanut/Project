@@ -1,73 +1,180 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Collect_Dudes.Data.Information;
-using Collect_Dudes.Data.Mentals;
-
-namespace Collect_Dudes.Data.Units
+﻿namespace Collect_Dudes.Data.Units
 {
-    internal class Unit : IAge
-    {
+    using Information;
+    using Mentals;
+    using World;
 
-        public Unit(string name, int day, int month, int year, byte strength, byte agility, byte willPower, Morale morale, Happiness happiness)
+    /// <summary>
+    /// A unit that represents a character in world.
+    /// </summary>
+    internal class Unit : IName, IAge
+    {
+        #region Properties
+
+        #region General
+        
+        /// <summary>
+        /// The name of this unit.
+        /// </summary>
+        public string name { get; set; }
+
+        /// <summary>
+        /// The birthday of this unit.
+        /// </summary>
+        public Date birthday { get; set; }
+
+        #endregion
+
+        #region Attributes
+        
+        /// <summary>
+        /// The strength of the unit. Determines base attack damage in melee combat.
+        /// </summary>
+        public byte strength { get; set; }
+        
+        /// <summary>
+        /// The agility of the unit. Determines base attack damage in ranged combat.
+        /// </summary>
+        public byte agility { get; set; }
+        
+        /// <summary>
+        /// The willPower of the unit. Determines base attack damage in magic combat.
+        /// </summary>
+        public byte willPower { get; set; }
+        
+        #endregion
+
+        #region Statistics
+        
+        /// <summary>
+        /// The current health the unit has.
+        /// </summary>
+        float currentHealth { get; set; }
+
+        /// <summary>
+        /// The maximum health the unit has.
+        /// </summary>
+        float maximumHealth { get; set; }
+        
+        /// <summary>
+        /// The current mana the unit has. Used for magical attacks
+        /// </summary>
+        float currentMana { get; set; }
+
+        /// <summary>
+        /// The maximum mana the unit has. Used for magical attacks
+        /// </summary>
+        float maximumMana { get; set; }
+        
+        /// <summary>
+        /// The current stamina the unit has. Used for physical attacks
+        /// </summary>
+        float currentStamina { get; set; }
+
+        /// <summary>
+        /// The maximum stamina the unit has. Used for physical attacks
+        /// </summary>
+        float maximumStamina { get; set; }
+        
+        /// <summary>
+        /// The speed the unit has. This is for calculating the rate of attack.
+        /// </summary>
+        byte speed { get; set; }
+        
+        /// <summary>
+        /// The physical resistance the unit has. This is the reduction in physical damage without armour.
+        /// </summary>
+        float physicalResistance { get; set; }
+        
+        /// <summary>
+        /// The magic resistance the unit has. This is the reduction in magic damage without armour.
+        /// </summary>
+        float magicResistance { get; set; }
+        
+        /// <summary>
+        /// The hit chance the unit has. This is for calculating the chance of a successful hit.
+        /// </summary>
+        float hitChance { get; set; }
+        
+        /// <summary>
+        /// The dodge chance the unit has. This is for calculating the chance of a successful dodge.
+        /// </summary>
+        float dodgeChance { get; set; }
+        
+        /// <summary>
+        /// The base physical damage the unit has. This is the damage the unit does without a weapon.
+        /// </summary>
+        float basePhysicalDamage { get; set; }
+        
+        /// <summary>
+        /// The physical critical chance the unit has. This is the chance the unit will land a critical attack.
+        /// </summary>
+        float physicalCriticalChance { get; set; }
+        
+        #endregion
+
+        #region Mental Statistics
+        
+        /// <summary>
+        /// The morale the unit has. This is the confidence the unit has going into a fight.
+        /// </summary>
+        public Morale morale { get; set; }
+        
+        /// <summary>
+        /// The happiness the unit has. This is the satisfaction the unit has with their employment.
+        /// </summary>
+        public Happiness happiness { get; set; }
+        
+        /// <summary>
+        /// The mental traits the unit has. A set of flags for unique traits a unit might have.
+        /// </summary>
+        public MentalTraits mentalTraits { get; set; }
+        
+        /// <summary>
+        /// The leadership the unit has. This is for determining the ability to maintain steady the composure of other teammates.
+        /// </summary>
+        public byte leadership { get; set; }
+        
+        /// <summary>
+        /// The teamwork the unit has. This is for determining the ability to increase the chances of victory with more teammates around.
+        /// </summary>
+        public byte teamwork { get; set; }
+        
+        #endregion
+
+        #region Employment
+        
+        /// <summary>
+        /// The weekly wage the unit earns. This is paid weekly to a unit for the duration of the contract.
+        /// </summary>
+        int wage { get; set; }
+        
+        /// <summary>
+        /// The ID of the team this unit belongs to. -1 means no team and therefore the unit is a free agent.
+        /// </summary>
+        ushort teamID { get; set; }
+        
+        /// <summary>
+        /// The amount of time remaining on the contract the unit has. At the end of the period the player will be a free agent and leave the team.
+        /// </summary>
+        int termRemaining { get; set; }
+
+        #endregion
+
+        #endregion
+
+        #region Initialisation
+        
+        public Unit(string name, Date birthday, byte strength, byte agility, byte willPower, Morale morale, Happiness happiness)
         {
             this.name = name;
-            this.day = day;
-            this.month = month;
-            this.year = year;
+            this.birthday = birthday;
             this.strength = strength;
             this.agility = agility;
             this.willPower = willPower;
             this.morale = morale;
             this.happiness = happiness;
-
         }
-
-        #region General
-        public string name { get; set; }
-        public int day { get; set; }
-        public int month { get; set; }
-        public int year { get; set; }
-        #endregion
-
-        #region Attributes
-        public byte strength { get; set; }
-        public byte agility { get; set; }
-        public byte willPower { get; set; }
-        #endregion
-
-        #region Statistics
-        float health;
-        float mana;
-        float stamina;
-        byte speed;
-        float physicalResistance;
-        float magicResistance;
-        float hitChance;
-        float dodgeChance;
-        float physicalDamage;
-        float physicalCritChance;
-        float physicalHitMultiplier;
-        #endregion
-
-        #region Mental Statistics
-        public Morale morale { get; set; }
-        public Happiness happiness { get; set; }
-        public MentalTraits mentalTraits { get; set; }
-        public byte leadership { get; set; }
-        public byte teamwork { get; set; }
-        #endregion
-
-        #region MyRegion
-
-        #endregion
-
-        #region Employment
-        int wage;
-        ushort teamID;
-        int termRemaining;
 
         #endregion
     }

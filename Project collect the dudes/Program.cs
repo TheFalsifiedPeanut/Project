@@ -23,14 +23,14 @@
             new ScreenManager();
             ScreenManager.QuickRender(new MainMenu());
 
-            Unit[] units = new Unit[]
-            {
-                new Unit("JohnJohn", 1, 2, 3, 10, 10, 10, Data.Mentals.Morale.Shattered, Data.Mentals.Happiness.Sad), 
-                new Unit("JimJim", 12, 11, 10, 1, 1, 1, Data.Mentals.Morale.Confident, Data.Mentals.Happiness.Ecstatic),
-                new Unit("JoeJoe", 13, 9, 2001, 9, 11, 10, Data.Mentals.Morale.Neutral, Data.Mentals.Happiness.Happy)
-            };
-
-            JSONData<Unit[]>.SaveData(units, InternalSettings.UnitsPath);
+            //Unit[] units = new Unit[]
+            //{
+            //    new Unit("JohnJohn", 1, 2, 3, 10, 10, 10, Data.Mentals.Morale.Shattered, Data.Mentals.Happiness.Sad), 
+            //    new Unit("JimJim", 12, 11, 10, 1, 1, 1, Data.Mentals.Morale.Confident, Data.Mentals.Happiness.Ecstatic),
+            //    new Unit("JoeJoe", 13, 9, 2001, 9, 11, 10, Data.Mentals.Morale.Neutral, Data.Mentals.Happiness.Happy)
+            //};
+            //
+            //JSONData<Unit[]>.SaveData(units, InternalSettings.UnitsPath);
 
 
 
