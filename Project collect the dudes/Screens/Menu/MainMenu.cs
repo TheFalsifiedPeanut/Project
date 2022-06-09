@@ -1,17 +1,20 @@
 ﻿namespace Collect_Dudes.Screens.Menu
 {
-    using System;
-    using System.Collections.Generic;
-    using Utilities;
     using ConsoleUtilities.Colours;
     using ConsoleUtilities.Inputs;
     using ConsoleUtilities.Screens;
+    using System;
+    using System.Collections.Generic;
+    using Utilities;
 
     /// <summary>
     /// A main menu.
     /// </summary>
     internal class MainMenu : Screen
     {
+        /// <summary>
+        /// Render the main menu.
+        /// </summary>
         public override void Render()
         {
             byte choice = Inputs.ChoiceDialogue(Colour.AquaFG + "TODO: Create ASCII Heading", TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry>()

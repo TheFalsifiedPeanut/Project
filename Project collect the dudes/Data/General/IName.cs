@@ -1,4 +1,4 @@
-﻿namespace Collect_Dudes.Data.Information
+﻿namespace Collect_Dudes.Data.General
 {
     /// <summary>
     /// An interface for interacting with names.

@@ -1,14 +1,14 @@
 ﻿namespace Collect_Dudes.Utilities
 {
     using ConsoleUtilities.Inputs;
-    using System;
-    
+    using System.Text;
+
     /// <summary>
     /// Utilities for text related functionality and styling.
     /// </summary>
     internal static class TextUtils
     {
-        #region Fields
+        #region Properties
         
         /// <summary>
         /// A dashed line divider.
@@ -30,42 +30,27 @@
         }
 
         #endregion
+
+        #region Formatting
         
         /// <summary>
-        /// 
+        /// Calculates the spacing before or after values in a column.
         /// </summary>
-        /// <param name="inputMessage"></param>
-        /// <param name="optionCount"></param>
-        /// <param name="clearScreen"></param>
-        /// <returns></returns>
-        public static int GetChoice(string inputMessage, int optionCount, bool clearScreen = false)
+        /// <param name="columnSize"> The size of the column. </param>
+        /// <param name="dataSize"> The size of the data entry. </param>
+        /// <returns> Returns spaces, that added to the data entry, correctly pads the column. </returns>
+        public static string Spacing(int columnSize, int dataSize)
         {
-            if (clearScreen)
+            StringBuilder spaceString = new StringBuilder();
+            
+            for (int i = 0; i < columnSize - dataSize; i++)
             {
-                Console.Clear();
+                spaceString.Append(" ");
             }
-            if (!string.IsNullOrEmpty(inputMessage))
-            {
-                Console.WriteLine(inputMessage);
-                Console.WriteLine("--------------------> :)");
-
-            }
-            string inputRaw = Console.ReadLine();
-            int inputValue;
-            if (int.TryParse(inputRaw, out inputValue))
-            {
-                if ( inputValue < 0 && inputValue >= optionCount)
-                {
-                    Console.WriteLine("Error. The input value was not in range");
-                    return GetChoice(inputMessage, optionCount, clearScreen);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Error. The input value was not a number. Learn how 2 read");
-                return GetChoice(inputMessage, optionCount, clearScreen);
-            }
-            return inputValue;
+            
+            return spaceString.ToString();
         }
+
+        #endregion
     }
 }

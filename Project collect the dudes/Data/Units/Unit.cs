@@ -1,7 +1,7 @@
 ﻿namespace Collect_Dudes.Data.Units
 {
-    using Information;
-    using Mentals;
+    using General;
+    using Mental;
     using World;
 
     /// <summary>
@@ -14,12 +14,12 @@
         #region General
         
         /// <summary>
-        /// The name of this unit.
+        /// The name of the unit.
         /// </summary>
         public string name { get; set; }
 
         /// <summary>
-        /// The birthday of this unit.
+        /// The birthday of the unit.
         /// </summary>
         public Date birthday { get; set; }
 
@@ -40,7 +40,7 @@
         /// <summary>
         /// The willPower of the unit. Determines base attack damage in magic combat.
         /// </summary>
-        public byte willPower { get; set; }
+        public byte intelligence { get; set; }
         
         #endregion
 
@@ -165,13 +165,13 @@
 
         #region Initialisation
         
-        public Unit(string name, Date birthday, byte strength, byte agility, byte willPower, Morale morale, Happiness happiness)
+        public Unit(string name, Date birthday, byte strength, byte agility, byte intelligence, Morale morale, Happiness happiness)
         {
             this.name = name;
             this.birthday = birthday;
             this.strength = strength;
             this.agility = agility;
-            this.willPower = willPower;
+            this.intelligence = intelligence;
             this.morale = morale;
             this.happiness = happiness;
         }

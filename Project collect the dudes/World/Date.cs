@@ -1,10 +1,12 @@
 ﻿namespace Collect_Dudes.World
 {
     using Serialization;
+    using System;
 
     /// <summary>
     /// Represents a date via a day, month and year components.
     /// </summary>
+    [Serializable]
     internal class Date
     {
         #region Fields
@@ -64,7 +66,7 @@
         /// </summary>
         public void SetDay(byte day)
         {
-            this.day = day;
+            this.day = (byte)(day > InternalSettings.daysInMonth ? InternalSettings.daysInMonth : day < 1 ? 1 : day);
         }
 
         /// <summary>
@@ -72,7 +74,7 @@
         /// </summary>
         public void SetMonth(byte month)
         {
-            this.month = month;
+            this.month = (byte)(month > InternalSettings.monthsInYear ? InternalSettings.monthsInYear : month < 1 ? 1 : month);
         }
 
         /// <summary>
@@ -95,8 +97,8 @@
         /// <param name="year"> The year component. </param>
         public Date(byte day, byte month, ushort year)
         {
-            this.day = day;
-            this.month = month;
+            this.day = (byte)(day > InternalSettings.daysInMonth ? InternalSettings.daysInMonth : day < 1 ? 1 : day);
+            this.month = (byte)(month > InternalSettings.monthsInYear ? InternalSettings.monthsInYear : month < 1 ? 1 : month);
             this.year = year;
         }
 
@@ -114,16 +116,14 @@
             if (day > InternalSettings.daysInMonth)
             {
                 month++;
+                day = 1;
             }
-            
-            day = (byte)(day % InternalSettings.daysInMonth);
 
             if (month > InternalSettings.monthsInYear)
             {
                 year++;
+                month = 1;
             }
-            
-            month = (byte)(month % InternalSettings.monthsInYear);
         }
 
         #endregion

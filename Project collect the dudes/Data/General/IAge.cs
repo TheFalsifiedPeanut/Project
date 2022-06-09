@@ -1,6 +1,6 @@
-﻿namespace Collect_Dudes.Data.Information
+﻿namespace Collect_Dudes.Data.General
 {
-    using World;
+    using Collect_Dudes.World;
 
     /// <summary>
     /// An interface for interacting with age.

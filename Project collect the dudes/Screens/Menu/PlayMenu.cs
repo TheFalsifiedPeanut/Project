@@ -1,9 +1,9 @@
 ﻿namespace Collect_Dudes.Screens.Menu
 {
-    using System;
-    using System.Collections.Generic;
     using ConsoleUtilities.Inputs;
     using ConsoleUtilities.Screens;
+    using System;
+    using System.Collections.Generic;
     using Utilities;
 
     /// <summary>

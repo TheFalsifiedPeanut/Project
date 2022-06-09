@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj": {}
+    "C:\\Users\\Scooter M8\\Desktop\\Console Projects\\Collect The Dudes\\Project\\Project collect the dudes\\Project collect the dudes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj": {
+    "C:\\Users\\Scooter M8\\Desktop\\Console Projects\\Collect The Dudes\\Project\\Project collect the dudes\\Project collect the dudes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
+        "projectUniqueName": "C:\\Users\\Scooter M8\\Desktop\\Console Projects\\Collect The Dudes\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
         "projectName": "Project collect the dudes",
-        "projectPath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
-        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\obj\\",
+        "projectPath": "C:\\Users\\Scooter M8\\Desktop\\Console Projects\\Collect The Dudes\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
+        "packagesPath": "C:\\Users\\Scooter M8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Scooter M8\\Desktop\\Console Projects\\Collect The Dudes\\Project\\Project collect the dudes\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Scooter M8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

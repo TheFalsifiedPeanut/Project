@@ -1,24 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.Data.Player
+﻿namespace Collect_Dudes.Data.Player
 {
-    internal class Player
-    {
-        public string name;
-        public int day;
-        public int month;
-        public int year;
+    using General;
+    using World;
 
-        public Player(string name, int day, int month, int year)
+    /// <summary>
+    /// A player that represents a the user.
+    /// </summary>
+    internal class Player : IName, IAge
+    {
+        #region Properties
+        
+        /// <summary>
+        /// The name of the player.
+        /// </summary>
+        public string name { get; set; }
+
+        /// <summary>
+        /// The birthday of the player.
+        /// </summary>
+        public Date birthday { get; set; }
+
+        #endregion
+
+        /// <summary>
+        /// A constructor for the player.
+        /// </summary>
+        /// <param name="name"> The name of the player. </param>
+        /// <param name="birthday"> The birthday of the player. </param>
+        public Player(string name, Date birthday)
         {
             this.name = name;
-            this.day = day;
-            this.month = month;
-            this.year = year;
+            this.birthday = birthday;
         }
 
     }

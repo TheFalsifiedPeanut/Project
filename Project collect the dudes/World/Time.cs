@@ -1,5 +1,7 @@
 ﻿namespace Collect_Dudes.World
 {
+    using System;
+
     /// <summary>
     /// Tracks time and date of the in game world.
     /// </summary>
@@ -46,7 +48,12 @@
         /// <param name="startYear"> The start year of time. </param>
         public Time(byte startDay, byte startMonth, ushort startYear)
         {
-            time ??= this;
+            if (time is null)
+            {
+                time = this;
+            }
+            
+            Console.WriteLine(time);
             
             currentDate = new Date(startDay, startMonth, startYear);
         }
@@ -74,7 +81,8 @@
         /// <returns> Returns the number of years that have passed since the specified initial date. </returns>
         public static ushort GetYearsSince(Date initialDate)
         {
-            return 1;
+            Console.WriteLine(time);
+            Console.WriteLine(time.currentDate);
             return (ushort)(time.currentDate.GetYear() - (initialDate.GetYear() + (time.currentDate.GetMonth() - (initialDate.GetMonth() + (time.currentDate.GetDay() - initialDate.GetDay() <= 0 ? 1 : 0) <= 0 ? 1 : 0))));
         }
 
@@ -82,6 +90,9 @@
 
         #region Behaviours
 
+        /// <summary>
+        /// Increments the day by one day.
+        /// </summary>
         public static void IncrementDay()
         {
             time.currentDate.IncrementDay();
