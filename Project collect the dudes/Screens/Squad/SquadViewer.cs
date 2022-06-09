@@ -22,29 +22,33 @@
         public override void Render()
         {
             Unit[] units = JSONData<Unit[]>.LoadData(InternalSettings.unitDataPath);
-            
+
             Console.WriteLine("|\tName\t   | Age | STR | AGI | INT |  Morale  |  Happiness  |");
-            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
+
+            byte choiceIndex = 1;
+            Dictionary<ConsoleKey, ChoiceEntry> choiceOptions = new Dictionary<ConsoleKey, ChoiceEntry>();
 
             if (units is not null)
             {
                 foreach (Unit unit in units)
                 {
-                    Console.WriteLine("|" + TextUtils.Spacing(20, unit.name.Length) + unit.name + "|" + TextUtils.Spacing(5, ((IAge)unit).age.ToString().Length) + ((IAge)unit).age + "|" + TextUtils.Spacing(5, unit.strength.ToString().Length) + unit.strength + "|" + TextUtils.Spacing(5, unit.agility.ToString().Length) + unit.agility + "|" + TextUtils.Spacing(5, unit.intelligence.ToString().Length) + unit.intelligence + "|" + TextUtils.Spacing(10, unit.morale.ToString().Length) + unit.morale + "|" + TextUtils.Spacing(13, unit.happiness.ToString().Length) + unit.happiness + "|");                       
+                    choiceOptions.Add((ConsoleKey)(choiceIndex + 48), TextUtils.BuildChoiceEntry("|" + TextUtils.Spacing(20, unit.name.Length) + unit.name + "|" + TextUtils.Spacing(5, ((IAge)unit).age.ToString().Length) + ((IAge)unit).age + "|" + TextUtils.Spacing(5, unit.strength.ToString().Length) + unit.strength + "|" + TextUtils.Spacing(5, unit.agility.ToString().Length) + unit.agility + "|" + TextUtils.Spacing(5, unit.intelligence.ToString().Length) + unit.intelligence + "|" + TextUtils.Spacing(10, unit.morale.ToString().Length) + unit.morale + "|" + TextUtils.Spacing(13, unit.happiness.ToString().Length) + unit.happiness + "|"));
+                    choiceIndex++;
                 }
             }
-            
-            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry>
-            {
-                { ConsoleKey.Backspace, TextUtils.BuildChoiceEntry("Back")}
-            });
-            
-            switch (choice)
-            {
-                case 0:
-                    ScreenManager.QuickRender(new Overworld());
 
-                    break;
+            choiceOptions.Add(ConsoleKey.Backspace, TextUtils.BuildChoiceEntry("Back"));
+
+            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtils.divider, choiceOptions);
+
+            if (choice == choiceIndex)
+            {
+                ScreenManager.QuickRender(new Overworld());
+            }
+            else
+            {
+                ScreenManager.QuickRender(new UnitViewer(units[choice]));
             }
         }
     }

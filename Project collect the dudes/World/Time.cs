@@ -81,6 +81,7 @@
         /// <returns> Returns the number of years that have passed since the specified initial date. </returns>
         public static ushort GetYearsSince(Date initialDate)
         {
+            return 1;
             Console.WriteLine(time);
             Console.WriteLine(time.currentDate);
             return (ushort)(time.currentDate.GetYear() - (initialDate.GetYear() + (time.currentDate.GetMonth() - (initialDate.GetMonth() + (time.currentDate.GetDay() - initialDate.GetDay() <= 0 ? 1 : 0) <= 0 ? 1 : 0))));

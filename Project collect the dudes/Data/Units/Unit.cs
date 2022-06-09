@@ -49,67 +49,67 @@
         /// <summary>
         /// The current health the unit has.
         /// </summary>
-        float currentHealth { get; set; }
+        public float currentHealth { get; set; }
 
         /// <summary>
         /// The maximum health the unit has.
         /// </summary>
-        float maximumHealth { get; set; }
+        public float maximumHealth { get; set; }
         
         /// <summary>
         /// The current mana the unit has. Used for magical attacks
         /// </summary>
-        float currentMana { get; set; }
+        public float currentMana { get; set; }
 
         /// <summary>
         /// The maximum mana the unit has. Used for magical attacks
         /// </summary>
-        float maximumMana { get; set; }
+        public float maximumMana { get; set; }
         
         /// <summary>
         /// The current stamina the unit has. Used for physical attacks
         /// </summary>
-        float currentStamina { get; set; }
+        public float currentStamina { get; set; }
 
         /// <summary>
         /// The maximum stamina the unit has. Used for physical attacks
         /// </summary>
-        float maximumStamina { get; set; }
-        
+        public float maximumStamina { get; set; }
+
         /// <summary>
         /// The speed the unit has. This is for calculating the rate of attack.
         /// </summary>
-        byte speed { get; set; }
+        public byte speed { get; set; }
         
         /// <summary>
         /// The physical resistance the unit has. This is the reduction in physical damage without armour.
         /// </summary>
-        float physicalResistance { get; set; }
+        public float physicalResistance { get; set; }
         
         /// <summary>
         /// The magic resistance the unit has. This is the reduction in magic damage without armour.
         /// </summary>
-        float magicResistance { get; set; }
+        public float magicResistance { get; set; }
         
         /// <summary>
         /// The hit chance the unit has. This is for calculating the chance of a successful hit.
         /// </summary>
-        float hitChance { get; set; }
+        public float hitChance { get; set; }
         
         /// <summary>
         /// The dodge chance the unit has. This is for calculating the chance of a successful dodge.
         /// </summary>
-        float dodgeChance { get; set; }
+        public float dodgeChance { get; set; }
         
         /// <summary>
         /// The base physical damage the unit has. This is the damage the unit does without a weapon.
         /// </summary>
-        float basePhysicalDamage { get; set; }
+        public float basePhysicalDamage { get; set; }
         
         /// <summary>
         /// The physical critical chance the unit has. This is the chance the unit will land a critical attack.
         /// </summary>
-        float physicalCriticalChance { get; set; }
+        public float physicalCriticalChance { get; set; }
         
         #endregion
 
@@ -147,17 +147,17 @@
         /// <summary>
         /// The weekly wage the unit earns. This is paid weekly to a unit for the duration of the contract.
         /// </summary>
-        int wage { get; set; }
+        public int wage { get; set; }
         
         /// <summary>
         /// The ID of the team this unit belongs to. -1 means no team and therefore the unit is a free agent.
         /// </summary>
-        ushort teamID { get; set; }
+        public ushort teamID { get; set; }
         
         /// <summary>
         /// The amount of time remaining on the contract the unit has. At the end of the period the player will be a free agent and leave the team.
         /// </summary>
-        int termRemaining { get; set; }
+        public int termRemaining { get; set; }
 
         #endregion
 

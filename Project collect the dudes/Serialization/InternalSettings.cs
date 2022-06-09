@@ -3,14 +3,14 @@
     /// <summary>
     /// Settings used internally by the game.
     /// </summary>
-    internal class InternalSettings
+    internal static class InternalSettings
     {
         #region Paths
         
         /// <summary>
         /// The path to the units file.
         /// </summary>
-        public static string unitDataPath => "Test\\units.json";
+        public static string unitDataPath => "units.json";
 
         #endregion
 
