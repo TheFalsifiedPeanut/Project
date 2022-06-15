@@ -150,9 +150,14 @@
         public int wage { get; set; }
         
         /// <summary>
-        /// The ID of the team this unit belongs to. -1 means no team and therefore the unit is a free agent.
+        /// The ID of the team this unit belongs to. -1 means no team.
         /// </summary>
         public ushort teamID { get; set; }
+
+        /// <summary>
+        /// The ID of the squad this unit belongs to. -1 means no squad and therefore the unit is a free agent.
+        /// </summary>
+        public ushort squadID { get; set; }
         
         /// <summary>
         /// The amount of time remaining on the contract the unit has. At the end of the period the player will be a free agent and leave the team.

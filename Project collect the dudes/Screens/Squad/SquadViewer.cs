@@ -26,7 +26,7 @@
             Console.WriteLine("|\tName\t   | Age | STR | AGI | INT |  Morale  |  Happiness  |");
             Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
 
-            byte choiceIndex = 1;
+            byte choiceIndex = 0;
             Dictionary<ConsoleKey, ChoiceEntry> choiceOptions = new Dictionary<ConsoleKey, ChoiceEntry>();
 
             if (units is not null)

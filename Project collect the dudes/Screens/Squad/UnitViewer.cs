@@ -2,8 +2,11 @@
 {
     using Collect_Dudes.Data.General;
     using Collect_Dudes.Data.Units;
+    using Collect_Dudes.Utilities;
+    using ConsoleUtilities.Inputs;
     using ConsoleUtilities.Screens;
     using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// View them stats
@@ -19,7 +22,16 @@
             Console.WriteLine("Mental Statistics--\n Morale: " + unit.morale + "\n Happiness: " + unit.happiness + "\n MentalTraits: " + unit.mentalTraits + "\n Leadership: " + unit.leadership + "\n Teamwork: " + unit.teamwork + "\n");
             Console.WriteLine("Employment-- \n Wage: " + unit.wage + "\n TeamID: " + unit.teamID + "\n Term Remaining: " + unit.termRemaining + "\n");
 
-            Console.ReadLine();
+            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
+            {
+                {ConsoleKey.Backspace, TextUtils.BuildChoiceEntry("Back") }
+            }) ;
+            switch (choice)
+            {
+                case 0:
+                    ScreenManager.QuickRender(new SquadViewer());
+                    break;
+            }
         }
         public UnitViewer(Unit unit)
         {
