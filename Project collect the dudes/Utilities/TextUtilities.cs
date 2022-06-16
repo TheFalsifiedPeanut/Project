@@ -6,7 +6,7 @@
     /// <summary>
     /// Utilities for text related functionality and styling.
     /// </summary>
-    internal static class TextUtils
+    internal static class TextUtilities
     {
         #region Properties
         

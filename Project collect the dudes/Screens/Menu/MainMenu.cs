@@ -17,11 +17,11 @@
         /// </summary>
         public override void Render()
         {
-            byte choice = Inputs.ChoiceDialogue(Colour.AquaFG + "TODO: Create ASCII Heading", TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
+            byte choice = Inputs.ChoiceDialogue(Colour.AquaFG + "TODO: Create ASCII Heading", TextUtilities.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
             {
-                { ConsoleKey.Enter, TextUtils.BuildChoiceEntry("Play") },
-                { ConsoleKey.Escape, TextUtils.BuildChoiceEntry("Exit") }
-            }, true);
+                { ConsoleKey.Enter, TextUtilities.BuildChoiceEntry("Play") },
+                { ConsoleKey.Escape, TextUtilities.BuildChoiceEntry("Exit") }
+            });
             
             switch (choice)
             {
@@ -31,7 +31,14 @@
                     break;
                 
                 case 1:
+                    // Exit the application.
                     Environment.Exit(0);
+                    
+                    break;
+                
+                default:
+                    // Redraw the page.
+                    ScreenManager.QuickRender(new MainMenu());
                     
                     break;
             }

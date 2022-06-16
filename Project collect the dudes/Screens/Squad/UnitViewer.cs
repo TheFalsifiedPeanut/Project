@@ -13,7 +13,22 @@
     /// </summary>
     internal class UnitViewer : Screen
     {
-        Unit unit;
+        #region Fields
+
+        #region Read Only Fields
+        
+        /// <summary>
+        /// The unit to be viewed.
+        /// </summary>
+        readonly Unit unit;
+
+        #endregion
+
+        #endregion
+        
+        /// <summary>
+        /// Render the unit viewer.
+        /// </summary>
         public override void Render()
         {
             Console.WriteLine(unit.name + "\nGeneral Information--\n Date of Birth: " + unit.birthday.GetDay() + "/" + unit.birthday.GetMonth() + "/" + unit.birthday.GetYear() + "\n Age: " + ((IAge)unit).age + "\n\n");
@@ -22,21 +37,35 @@
             Console.WriteLine("Mental Statistics--\n Morale: " + unit.morale + "\n Happiness: " + unit.happiness + "\n MentalTraits: " + unit.mentalTraits + "\n Leadership: " + unit.leadership + "\n Teamwork: " + unit.teamwork + "\n");
             Console.WriteLine("Employment-- \n Wage: " + unit.wage + "\n TeamID: " + unit.teamID + "\n Term Remaining: " + unit.termRemaining + "\n");
 
-            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
+            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtilities.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
             {
-                {ConsoleKey.Backspace, TextUtils.BuildChoiceEntry("Back") }
-            }) ;
-            switch (choice)
+                {ConsoleKey.Backspace, TextUtilities.BuildChoiceEntry("Back") }
+            });
+
+            if (choice is 0)
             {
-                case 0:
-                    ScreenManager.QuickRender(new SquadViewer());
-                    break;
+                ScreenManager.QuickRender(new SquadViewer());
+            }
+
+            else
+            {
+                // Redraw the page.
+                ScreenManager.QuickRender(new UnitViewer(unit));
             }
         }
+
+        #region Initialisation
+
+        /// <summary>
+        /// A constructor for the UnitViewer.
+        /// </summary>
+        /// <param name="unit"> The unit to be viewed. </param>
         public UnitViewer(Unit unit)
         {
             this.unit = unit;
         }
+
+        #endregion
     }
 }
 

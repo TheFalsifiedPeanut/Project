@@ -17,10 +17,11 @@
     class SquadViewer : Screen
     {
         /// <summary>
-        /// Render the squad view.
+        /// Render the squad viewer.
         /// </summary>
         public override void Render()
         {
+            // TODO: Replace with the squad from the agency currently being viewed.
             Unit[] units = JSONData<Unit[]>.LoadData(InternalSettings.unitDataPath);
 
             Console.WriteLine("|\tName\t   | Age | STR | AGI | INT |  Morale  |  Happiness  |");
@@ -31,24 +32,33 @@
 
             if (units is not null)
             {
+                // TODO: Convert this system to use a page system to work with overflow of units to number keys.
                 foreach (Unit unit in units)
                 {
-                    choiceOptions.Add((ConsoleKey)(choiceIndex + 48), TextUtils.BuildChoiceEntry("|" + TextUtils.Spacing(20, unit.name.Length) + unit.name + "|" + TextUtils.Spacing(5, ((IAge)unit).age.ToString().Length) + ((IAge)unit).age + "|" + TextUtils.Spacing(5, unit.strength.ToString().Length) + unit.strength + "|" + TextUtils.Spacing(5, unit.agility.ToString().Length) + unit.agility + "|" + TextUtils.Spacing(5, unit.intelligence.ToString().Length) + unit.intelligence + "|" + TextUtils.Spacing(10, unit.morale.ToString().Length) + unit.morale + "|" + TextUtils.Spacing(13, unit.happiness.ToString().Length) + unit.happiness + "|"));
+                    // We add 48 to get the number key as '1' is key 48.
+                    choiceOptions.Add((ConsoleKey)(choiceIndex + 48), TextUtilities.BuildChoiceEntry("|" + TextUtilities.Spacing(20, unit.name.Length) + unit.name + "|" + TextUtilities.Spacing(5, ((IAge)unit).age.ToString().Length) + ((IAge)unit).age + "|" + TextUtilities.Spacing(5, unit.strength.ToString().Length) + unit.strength + "|" + TextUtilities.Spacing(5, unit.agility.ToString().Length) + unit.agility + "|" + TextUtilities.Spacing(5, unit.intelligence.ToString().Length) + unit.intelligence + "|" + TextUtilities.Spacing(10, unit.morale.ToString().Length) + unit.morale + "|" + TextUtilities.Spacing(13, unit.happiness.ToString().Length) + unit.happiness + "|"));
                     choiceIndex++;
                 }
             }
 
-            choiceOptions.Add(ConsoleKey.Backspace, TextUtils.BuildChoiceEntry("Back"));
+            choiceOptions.Add(ConsoleKey.Backspace, TextUtilities.BuildChoiceEntry("Back"));
 
-            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtils.divider, choiceOptions);
+            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtilities.divider, choiceOptions);
 
             if (choice == choiceIndex)
             {
                 ScreenManager.QuickRender(new Overworld());
             }
+            
+            else if (choice < choiceIndex)
+            {
+                ScreenManager.QuickRender(new UnitViewer(units?[choice]));
+            }
+
             else
             {
-                ScreenManager.QuickRender(new UnitViewer(units[choice]));
+                // Redraw the page.
+                ScreenManager.QuickRender(new SquadViewer());
             }
         }
     }

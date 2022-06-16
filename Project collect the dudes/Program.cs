@@ -28,9 +28,9 @@
 
             Unit[] units = new Unit[]
             {
-                new Unit("JohnJohn", new Date(5,1,12), 10, 10, 10, Morale.Shattered, Happiness.Sad), 
-                new Unit("JimJim", new Date(9,4,1923), 1, 1, 1, Morale.Confident, Happiness.Ecstatic),
-                new Unit("JoeJoe", new Date(28,8,2025), 9, 11, 10, Morale.Neutral, Happiness.Happy)
+                new Unit(0, "JohnJohn", new Date(5,1,12), 10, 10, 10, Morale.Shattered, Happiness.Sad), 
+                new Unit(1, "JimJim", new Date(9,4,1923), 1, 1, 1, Morale.Confident, Happiness.Ecstatic),
+                new Unit(2, "JoeJoe", new Date(28,8,2025), 9, 11, 10, Morale.Neutral, Happiness.Happy)
             };
             
             //JSONData<Unit[]>.SaveData(units, InternalSettings.unitDataPath);

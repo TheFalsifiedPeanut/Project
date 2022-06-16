@@ -16,11 +16,11 @@
         /// </summary>
         public override void Render()
         {
-            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
+            byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtilities.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
             {
-                {ConsoleKey.N, TextUtils.BuildChoiceEntry("New Game") },
-                {ConsoleKey.L, TextUtils.BuildChoiceEntry("Load Game") },
-                {ConsoleKey.Backspace, TextUtils.BuildChoiceEntry("Back") }
+                {ConsoleKey.N, TextUtilities.BuildChoiceEntry("New Game") },
+                {ConsoleKey.L, TextUtilities.BuildChoiceEntry("Load Game") },
+                {ConsoleKey.Backspace, TextUtilities.BuildChoiceEntry("Back") }
             }, true);
             
             switch (choice)
@@ -37,6 +37,12 @@
                 
                 case 2:
                     ScreenManager.QuickRender(new MainMenu());
+                    
+                    break;
+                
+                default:
+                    // Redraw the page.
+                    ScreenManager.QuickRender(new PlayMenu());
                     
                     break;
             }

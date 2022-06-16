@@ -17,17 +17,20 @@
         /// </summary>
         public override void Render()
         {
-            byte choice = Inputs.ChoiceDialogue("Select a screen to view.", TextUtils.divider, new Dictionary<ConsoleKey, ChoiceEntry> 
+            byte choice = Inputs.ChoiceDialogue("Select a screen to view.", TextUtilities.divider, new Dictionary<ConsoleKey, ChoiceEntry> 
             {
-                { ConsoleKey.S, TextUtils.BuildChoiceEntry("Squad Viewer")}
-            }, true);
-            
-            switch (choice)
+                { ConsoleKey.S, TextUtilities.BuildChoiceEntry("Squad Viewer")}
+            });
+
+            if (choice is 0)
             {
-                case 0:
-                    ScreenManager.QuickRender(new SquadViewer());
-                    
-                    break;
+                ScreenManager.QuickRender(new SquadViewer());
+            }
+
+            else
+            {
+                // Redraw the page.
+                ScreenManager.QuickRender(new Overworld());
             }
         }
     }

@@ -7,11 +7,16 @@
     /// <summary>
     /// A unit that represents a character in world.
     /// </summary>
-    internal class Unit : IName, IAge
+    internal class Unit : IIdentifier, IName, IAge
     {
         #region Properties
 
         #region General
+        
+        /// <summary>
+        /// The ID of the unit.
+        /// </summary>
+        public ushort id { get; set; }
         
         /// <summary>
         /// The name of the unit.
@@ -170,8 +175,9 @@
 
         #region Initialisation
         
-        public Unit(string name, Date birthday, byte strength, byte agility, byte intelligence, Morale morale, Happiness happiness)
+        public Unit(ushort id, string name, Date birthday, byte strength, byte agility, byte intelligence, Morale morale, Happiness happiness)
         {
+            this.id = id;
             this.name = name;
             this.birthday = birthday;
             this.strength = strength;
