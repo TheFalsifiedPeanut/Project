@@ -49,7 +49,7 @@
         
         #endregion
 
-        #region Statistics
+        #region Physical Statistics
         
         /// <summary>
         /// The current health the unit has.
@@ -60,6 +60,8 @@
         /// The maximum health the unit has.
         /// </summary>
         public float maximumHealth { get; set; }
+
+        public float healthRegen { get; set; }
         
         /// <summary>
         /// The current mana the unit has. Used for magical attacks
@@ -70,6 +72,8 @@
         /// The maximum mana the unit has. Used for magical attacks
         /// </summary>
         public float maximumMana { get; set; }
+
+        public float manaRegen { get; set; }
         
         /// <summary>
         /// The current stamina the unit has. Used for physical attacks
@@ -80,6 +84,8 @@
         /// The maximum stamina the unit has. Used for physical attacks
         /// </summary>
         public float maximumStamina { get; set; }
+
+        public float staminaRegen { get; set; }
 
         /// <summary>
         /// The speed the unit has. This is for calculating the rate of attack.
