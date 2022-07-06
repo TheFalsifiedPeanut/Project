@@ -11,7 +11,7 @@ namespace Collect_Dudes.World.Generators
 {
     internal static class UnitGenerator
     {
-        public static Unit GenerateUnit()
+        public static Unit GenerateUnit(ushort ID)
         {
 
             Random random = new Random();
@@ -44,9 +44,9 @@ namespace Collect_Dudes.World.Generators
 
             }
             int attributePoints = random.Next(baseAttributePoints, capacityAttributePoints) - (3 * InternalSettings.baseAttributeValue);
-            int strength = InternalSettings.baseAttributeValue;
-            int agility = InternalSettings.baseAttributeValue;
-            int intelligence = InternalSettings.baseAttributeValue;
+            byte strength = InternalSettings.baseAttributeValue;
+            byte agility = InternalSettings.baseAttributeValue;
+            byte intelligence = InternalSettings.baseAttributeValue;
             while (attributePoints > 0)
             {
                 attributePoints--;
@@ -75,9 +75,9 @@ namespace Collect_Dudes.World.Generators
                 }
                 else
                 {
-                    if (agility + 1 <= InternalSettings.capacityAttributeValue)
+                    if (intelligence + 1 <= InternalSettings.capacityAttributeValue)
                     {
-                        agility++;
+                        intelligence++;
                     }
                     else
                     {
@@ -91,13 +91,15 @@ namespace Collect_Dudes.World.Generators
             float manaRegen = intelligence * InternalSettings.manaRegenPerIntelligence;
             float stamina = agility * InternalSettings.staminaPerAgility;
             float staminaRegen = agility * InternalSettings.staminaRegenPerAgility;
-            float speed = agility * InternalSettings.speedPerAgility;
+            byte speed = (byte)(agility * InternalSettings.speedPerAgility);
             float physicalResistance = strength * InternalSettings.physicalResitancePerStrength;
             float magicResistance = intelligence * InternalSettings.magicResistancePerIntelligence;
             float hitChance = agility * InternalSettings.hitChancePerAgility;
             float dodgeChance = agility * InternalSettings.dodgeChancePerAgility;
             float basePhysicalDamage = strength * InternalSettings.basePhysicalDamagePerStrength;
             float physicalCritChance = agility * InternalSettings.physicalCritChancePerAgility;
+
+            return new Unit(ID, "UNIT " + ID, new Date(1,1,1), strength, agility, intelligence, health, healthRegen, mana, manaRegen, stamina, staminaRegen, speed, physicalResistance, magicResistance, hitChance, dodgeChance, basePhysicalDamage, physicalCritChance, Data.Mental.Morale.Neutral, Data.Mental.Happiness.Indifferent);
         }
     }
 }

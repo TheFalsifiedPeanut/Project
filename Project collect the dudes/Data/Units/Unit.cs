@@ -181,7 +181,7 @@
 
         #region Initialisation
         
-        public Unit(ushort id, string name, Date birthday, byte strength, byte agility, byte intelligence, Morale morale, Happiness happiness)
+        public Unit(ushort id, string name, Date birthday, byte strength, byte agility, byte intelligence, float maximumHealth, float healthRegen, float maximumMana, float manaRegen, float maximumStamina, float staminaRegen, byte speed, float physicalResistance, float magicResistance, float hitChance, float dodgeChance, float basePhysicalDamage, float physicalCriticalChance, Morale morale, Happiness happiness)
         {
             this.id = id;
             this.name = name;
@@ -189,6 +189,19 @@
             this.strength = strength;
             this.agility = agility;
             this.intelligence = intelligence;
+            this.maximumHealth = currentHealth = maximumHealth;
+            this.healthRegen = healthRegen;
+            this.maximumMana = currentMana = maximumMana;
+            this.manaRegen = manaRegen;
+            this.maximumStamina = currentStamina = maximumStamina;
+            this.staminaRegen = staminaRegen;
+            this.speed = speed;
+            this.physicalResistance = physicalResistance;
+            this.magicResistance = magicResistance;
+            this.hitChance = hitChance;
+            this.dodgeChance = dodgeChance;
+            this.basePhysicalDamage = basePhysicalDamage;
+            this.physicalCriticalChance = physicalCriticalChance;
             this.morale = morale;
             this.happiness = happiness;
         }

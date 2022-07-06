@@ -1,5 +1,6 @@
 ﻿namespace Collect_Dudes.Screens.Squad
 {
+    using Collect_Dudes.World;
     using ConsoleUtilities.Inputs;
     using ConsoleUtilities.Screens;
     using ConsoleUtilities.Serialisation;
@@ -23,6 +24,7 @@
         {
             // TODO: Replace with the squad from the agency currently being viewed.
             Unit[] units = JSONData<Unit[]>.LoadData(InternalSettings.unitDataPath);
+            units = UnitPool.GetUnits().ToArray();
 
             Console.WriteLine("|\tName\t   | Age | STR | AGI | INT |  Morale  |  Happiness  |");
             Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
