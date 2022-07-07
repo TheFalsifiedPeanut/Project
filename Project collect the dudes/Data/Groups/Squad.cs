@@ -35,9 +35,9 @@
         /// <summary>
         /// A constructor for the Squad.
         /// </summary>
-        public Squad()
+        public Squad(HashSet<ushort> units)
         {
-            units = new HashSet<ushort>();
+            this.units = units; 
             teams = new HashSet<Team>();
         }
 

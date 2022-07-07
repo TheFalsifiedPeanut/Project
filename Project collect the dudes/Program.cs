@@ -14,6 +14,7 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Loading...");
             // Determine if the advance colour mode is not active and activate it per the system requirements.
             if (!ColourUtilities.IsAdvancedColourModeEnabled())
             {

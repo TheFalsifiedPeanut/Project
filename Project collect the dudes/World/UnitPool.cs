@@ -12,6 +12,22 @@ namespace Collect_Dudes.World
     {
         static UnitPool unitPool;
         List<Unit> units;
+
+        #region Getters
+        public static int GetUnitCount()
+        {
+            return unitPool.units.Count;
+        }
+
+        public static Unit GetUnitByIndex(int index)
+        {
+            if (unitPool.units.Count > index)
+            {
+                return unitPool.units[index];
+            }
+            return null;
+        }
+
         public static Unit GetUnitByID(ushort id)
         {
             for (int i = 0; i < unitPool.units.Count; i++)
@@ -28,10 +44,13 @@ namespace Collect_Dudes.World
         {
             return unitPool.units;
         }
- 
+
+        #endregion
+
+
+
         public UnitPool(int initialPoolSize)
         {
-            Console.WriteLine(unitPool);
             if (unitPool is null)
             {
                 unitPool = this;
@@ -47,7 +66,6 @@ namespace Collect_Dudes.World
             bool takenID = false;
             for (ushort i = 0; i < ushort.MaxValue; i++)
             {
-                Console.WriteLine(i);
                 for (int j = 0; j < units.Count; j++)
                 {
                     if (i == units[j].id)

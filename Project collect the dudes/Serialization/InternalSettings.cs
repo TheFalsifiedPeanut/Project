@@ -60,7 +60,22 @@
         public static float baseTeamworkValue => 1;
         public static float capacityTeamworkValue => 20;
 
-        
+
+        #endregion
+        #region Teams
+        public static byte teamSize => 8;
+        #endregion
+        #region Squads
+        public static byte minSquadSize => 64;
+        public static byte maxSquadSize => 128;
+        #endregion
+        #region Agency
+        public static int baseMoney => 1000;
+        public static int oneStarMoneyMaximum => 5000;
+        public static int twoStarMoneyMaximum => 15000;
+        public static int threeStarMoneyMaximum => 50000;
+        public static int fourStarMoneyMaximum => 100000;
+        public static int fiveStarMoneyMaximum => 200000;
         #endregion
         #endregion
     }

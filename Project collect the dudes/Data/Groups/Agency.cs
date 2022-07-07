@@ -15,5 +15,12 @@ namespace Collect_Dudes.Data.Groups
         public Squad squad { get; set; }
         public int money { get; set; }
 
+        public Agency(ushort id, string name, Squad squad, int money)
+        {
+            this.id = id;
+            this.name = name;
+            this.squad = squad;
+            this.money = money;
+        }
     }
 }
