@@ -16,10 +16,27 @@ namespace Collect_Dudes.World.Generators
 
             Random random = new Random();
             // Random.Next is exclusive for the upper bounds.
-            int starLevel = random.Next(1, 6);
+            byte starIndex = (byte)(random.Next(1, 26));
+            StarLevel starLevel = StarLevel.fiveStar;
+            if (starIndex <= 5)
+            {
+                starLevel = StarLevel.oneStar;
+            }
+            else if (starIndex <= 12)
+            {
+                starLevel = StarLevel.twoStar;
+            }
+            else if (starIndex <= 20)
+            {
+                starLevel = StarLevel.threeStar;
+            }
+            else if (starIndex <= 23)
+            {
+                starLevel = StarLevel.fourStar;
+            }
             int baseAttributePoints = 0;
             int capacityAttributePoints = 0;
-            switch ((StarLevel)starLevel)
+            switch (starLevel)
             {
                 case StarLevel.oneStar:
                     baseAttributePoints = InternalSettings.baseAttributePoints;
