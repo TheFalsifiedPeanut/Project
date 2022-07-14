@@ -99,7 +99,7 @@ namespace Collect_Dudes.World.Generators
             float basePhysicalDamage = strength * InternalSettings.basePhysicalDamagePerStrength;
             float physicalCritChance = agility * InternalSettings.physicalCritChancePerAgility;
 
-            return new Unit(ID, "UNIT " + ID, new Date(1,1,1), strength, agility, intelligence, health, healthRegen, mana, manaRegen, stamina, staminaRegen, speed, physicalResistance, magicResistance, hitChance, dodgeChance, basePhysicalDamage, physicalCritChance, Data.Mental.Morale.Neutral, Data.Mental.Happiness.Indifferent);
+            return new Unit(ID, "UNIT " + ID, new Date(1,1,1), strength, agility, intelligence, health, healthRegen, mana, manaRegen, stamina, staminaRegen, speed, physicalResistance, magicResistance, hitChance, dodgeChance, basePhysicalDamage, physicalCritChance, Data.Mental.Morale.Neutral, Data.Mental.Happiness.Indifferent, (byte)(starLevel));
         }
     }
 }

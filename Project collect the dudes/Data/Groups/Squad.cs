@@ -8,7 +8,7 @@
     /// <summary>
     /// A squad represents a group of units belonging to an agency.
     /// </summary>
-    internal class Squad : IIdentifier
+    internal class Squad : IIdentifier, IStarLevel
     {
         #region Properties
 
@@ -16,7 +16,10 @@
         /// The ID of the squad.
         /// </summary>
         public ushort id { get; set; }
-        
+
+        public byte starLevel { get; set; }
+
+
         /// <summary>
         /// A hash set of all the IDs of units in the team.
         /// All IDs are unique and a hash set guarantees to not have duplicates of a unit.
@@ -35,10 +38,11 @@
         /// <summary>
         /// A constructor for the Squad.
         /// </summary>
-        public Squad(HashSet<ushort> units)
+        public Squad(HashSet<ushort> units, byte starLevel)
         {
             this.units = units; 
             teams = new HashSet<Team>();
+            this.starLevel = starLevel;
         }
 
         #endregion

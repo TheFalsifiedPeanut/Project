@@ -1,5 +1,6 @@
 ﻿namespace Collect_Dudes
 {
+    using Collect_Dudes.World.DataPools;
     using ConsoleUtilities.Colours;
     using ConsoleUtilities.Screens;
     using ConsoleUtilities.Serialisation;
@@ -22,7 +23,8 @@
             }
 
             new Time(1, 1, 2030);
-            new UnitPool(10);
+            new UnitPool(1000);
+            new AgencyPool(10);
 
             new ScreenManager();
             ScreenManager.QuickRender(new MainMenu());

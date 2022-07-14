@@ -7,7 +7,7 @@
     /// <summary>
     /// A unit that represents a character in world.
     /// </summary>
-    internal class Unit : IIdentifier, IName, IAge
+    internal class Unit : IIdentifier, IName, IAge, IStarLevel
     {
         #region Properties
 
@@ -17,7 +17,9 @@
         /// The ID of the unit.
         /// </summary>
         public ushort id { get; set; }
-        
+
+        public byte starLevel { get; set; }
+
         /// <summary>
         /// The name of the unit.
         /// </summary>
@@ -180,8 +182,8 @@
         #endregion
 
         #region Initialisation
-        
-        public Unit(ushort id, string name, Date birthday, byte strength, byte agility, byte intelligence, float maximumHealth, float healthRegen, float maximumMana, float manaRegen, float maximumStamina, float staminaRegen, byte speed, float physicalResistance, float magicResistance, float hitChance, float dodgeChance, float basePhysicalDamage, float physicalCriticalChance, Morale morale, Happiness happiness)
+
+        public Unit(ushort id, string name, Date birthday, byte strength, byte agility, byte intelligence, float maximumHealth, float healthRegen, float maximumMana, float manaRegen, float maximumStamina, float staminaRegen, byte speed, float physicalResistance, float magicResistance, float hitChance, float dodgeChance, float basePhysicalDamage, float physicalCriticalChance, Morale morale, Happiness happiness, byte starLevel)
         {
             this.id = id;
             this.name = name;
@@ -204,6 +206,8 @@
             this.physicalCriticalChance = physicalCriticalChance;
             this.morale = morale;
             this.happiness = happiness;
+
+            this.starLevel = starLevel;
         }
 
         #endregion

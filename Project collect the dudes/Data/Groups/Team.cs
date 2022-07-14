@@ -7,7 +7,7 @@
     /// <summary>
     /// A team represents a group of units that battle together.
     /// </summary>
-    internal class Team : IIdentifier, IName
+    internal class Team : IIdentifier, IName, IStarLevel
     {
         #region Properties
 
@@ -15,7 +15,9 @@
         /// The ID of the team.
         /// </summary>
         public ushort id { get; set; }
-        
+
+        public byte starLevel { get; set; }
+
         /// <summary>
         /// The name of the team.
         /// </summary>
@@ -40,12 +42,13 @@
         /// <param name="id"> The ID of the team. </param>
         /// <param name="name"> The name of the team. </param>
         /// <param name="squadID"> The ID of the squad this team belongs to. </param>
-        public Team(ushort id, string name, ushort squadID)
+        public Team(ushort id, string name, ushort squadID, byte starLevel)
         {
             this.id = id;
             this.name = name;
             this.squadID = squadID;
             units = new HashSet<ushort>();
+            this.starLevel = starLevel;
         }
 
         #region Units
