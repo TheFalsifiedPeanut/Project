@@ -1,7 +1,7 @@
 ﻿namespace Collect_Dudes.Data.Mental
 {
     /// <summary>
-    /// The morale of units.
+    /// The levels of morale a unit can have.
     /// </summary>
     internal enum Morale
     {
@@ -16,12 +16,12 @@
         Negative,
         
         /// <summary>
-        /// The unit feels no strong feelings entering battle and will perform average.
+        /// The unit feels no strong emotions entering battle and will perform average.
         /// </summary>
         Neutral,
         
         /// <summary>
-        /// The unit feels excited feelings entering battle and may perform better than expected.
+        /// The unit feels excited entering battle and may perform better than expected.
         /// </summary>
         Positive,
         

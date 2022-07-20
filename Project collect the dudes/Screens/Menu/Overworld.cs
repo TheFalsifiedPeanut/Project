@@ -6,7 +6,7 @@
     using System;
     using System.Collections.Generic;
     using Utilities;
-    
+
     /// <summary>
     /// An Overworld for choosing a which management aspect to pursue.
     /// </summary>

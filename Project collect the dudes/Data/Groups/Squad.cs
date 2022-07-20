@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Units;
+    using Units.Enums;
 
     /// <summary>
     /// A squad represents a group of units belonging to an agency.
@@ -17,9 +18,11 @@
         /// </summary>
         public ushort id { get; set; }
 
+        /// <summary>
+        /// The star level of the squad.
+        /// </summary>
         public byte starLevel { get; set; }
-
-
+        
         /// <summary>
         /// A hash set of all the IDs of units in the team.
         /// All IDs are unique and a hash set guarantees to not have duplicates of a unit.
@@ -38,11 +41,13 @@
         /// <summary>
         /// A constructor for the Squad.
         /// </summary>
-        public Squad(HashSet<ushort> units, byte starLevel)
+        /// <param name="starLevel"> The star level of the squad. </param>
+        /// <param name="units"> A hash set of all the IDs of units in the team. </param>
+        public Squad(byte starLevel, HashSet<ushort> units)
         {
             this.units = units; 
-            teams = new HashSet<Team>();
             this.starLevel = starLevel;
+            teams = new HashSet<Team>();
         }
 
         #endregion
@@ -104,7 +109,7 @@
                 return false;
             }
             
-            return teams.Add(new Team(id, name, id));
+            return teams.Add(new Team(id, name, id, (byte)StarLevel.ONE));
         }
 
         /// <summary>
@@ -112,7 +117,7 @@
         /// </summary>
         /// <param name="id"> The ID of the team to delete. </param>
         /// <returns> Returns the number of teams that were deleted. </returns>
-        public ushort DeleteTeam(ushort id)
+        public ushort DeleteTeamByID(ushort id)
         {
             return (ushort)teams.RemoveWhere(team => team.id == id);
         }
@@ -122,7 +127,7 @@
         /// </summary>
         /// <param name="name"> The name of the teams to delete. </param>
         /// <returns> Returns the number of teams that were deleted. </returns>
-        public ushort DeleteTeam(string name)
+        public ushort DeleteTeamByName(string name)
         {
             return (ushort)teams.RemoveWhere(team => team.name == name);
         }
@@ -132,7 +137,7 @@
         /// </summary>
         /// <param name="team"> The team to delete. </param>
         /// <returns> Returns whether the team was deleted. </returns>
-        public bool DeleteTeam(Team team)
+        public bool DeleteTeamByValue(Team team)
         {
             return teams.Remove(team);
         }

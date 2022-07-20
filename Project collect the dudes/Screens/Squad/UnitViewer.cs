@@ -1,12 +1,12 @@
 ﻿namespace Collect_Dudes.Screens.Squad
 {
-    using Collect_Dudes.Data.General;
-    using Collect_Dudes.Data.Units;
-    using Collect_Dudes.Utilities;
     using ConsoleUtilities.Inputs;
     using ConsoleUtilities.Screens;
+    using Data.General;
+    using Data.Units;
     using System;
     using System.Collections.Generic;
+    using Utilities;
 
     /// <summary>
     /// View them stats
@@ -31,11 +31,11 @@
         /// </summary>
         public override void Render()
         {
-            Console.WriteLine(unit.name + "\nGeneral Information--\n Date of Birth: " + unit.birthday.GetDay() + "/" + unit.birthday.GetMonth() + "/" + unit.birthday.GetYear() + "\n Age: " + ((IAge)unit).age + "\n\n");
-            Console.WriteLine("Attributes--\n Strength: " + unit.strength + "\n Agility: " + unit.agility + "\n Intelligence: " + unit.intelligence + "\n");
-            Console.WriteLine("Statistics--\n Health: " + unit.maximumHealth + "\n Mana: " + unit.maximumStamina + "\n Stamina: " + unit.maximumStamina + "\n Speed: " + unit.speed + "\n Physical Resistance: " + unit.physicalResistance + "\n Magic Resistance: " + unit.magicResistance + "\n Hit Chance: " + unit.hitChance + "\n Dodge Chance: " + unit.dodgeChance + "\n Physical Damage: " + unit.basePhysicalDamage + "\n Crit Chance: " + unit.physicalCriticalChance + "\n");
-            Console.WriteLine("Mental Statistics--\n Morale: " + unit.morale + "\n Happiness: " + unit.happiness + "\n MentalTraits: " + unit.mentalTraits + "\n Leadership: " + unit.leadership + "\n Teamwork: " + unit.teamwork + "\n");
-            Console.WriteLine("Employment-- \n Wage: " + unit.wage + "\n TeamID: " + unit.teamID + "\n Term Remaining: " + unit.termRemaining + "\n");
+            Console.WriteLine(unit.name + "\n-General Information-\nDate of Birth: " + unit.birthday.GetDay() + "/" + unit.birthday.GetMonth() + "/" + unit.birthday.GetYear() + "\nAge: " + ((IAge)unit).age + "\n\n");
+            Console.WriteLine("-Attributes-\nStrength: " + unit.strength + "\n Agility: " + unit.agility + "\n Intelligence: " + unit.intelligence + "\n");
+            Console.WriteLine("-Statistics-\nHealth: " + unit.maximumHealth + "\nHealth Regeneration: " + unit.healthRegeneration + "\nMana: " + unit.maximumMana + "\nMana Regeneration: " + unit.manaRegeneration + "\nStamina: " + unit.maximumStamina + "\nStamina Regeneration: " + unit.staminaRegeneration + "\nSpeed: " + unit.speed + "\nPhysical Resistance: " + unit.physicalResistance + "\nMagical Resistance: " + unit.magicalResistance + "\nHit Chance: " + unit.hitChance + "\nDodge Chance: " + unit.dodgeChance + "\nPhysical Damage: " + unit.basePhysicalDamage + "\nCritical Chance: " + unit.physicalCriticalChance + "\n");
+            Console.WriteLine("-Mental Statistics-\nLeadership: " + unit.leadership + "\n Teamwork: " + unit.teamwork + "\nMorale: " + unit.morale + "\nHappiness: " + unit.happiness + "\nMentalTraits: " + unit.mentalTraits + "\n");
+            Console.WriteLine("-Employment-\nWage: " + unit.wage + "\nTerm Remaining: " + unit.termRemaining + "\nTeamID: " + unit.teamID + "\n");
 
             byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtilities.divider, new Dictionary<ConsoleKey, ChoiceEntry>()
             {

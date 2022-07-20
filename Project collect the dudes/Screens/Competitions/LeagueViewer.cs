@@ -1,13 +1,10 @@
-﻿using Collect_Dudes.Data.Groups;
-using ConsoleUtilities.Screens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.Screens.Competitions
+﻿namespace Collect_Dudes.Screens.Competitions
 {
+    using ConsoleUtilities.Screens;
+    using Data.Groups;
+    using System;
+    using System.Collections.Generic;
+
     internal class LeagueViewer : Screen
     {
         List<Team> teams;

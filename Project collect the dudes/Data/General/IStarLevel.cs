@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.Data.General
+﻿namespace Collect_Dudes.Data.General
 {
+    /// <summary>
+    /// An interface for interacting with names.
+    /// </summary>
     internal interface IStarLevel
     {
+        /// <summary>
+        /// The star level of the object.
+        /// </summary>
         public byte starLevel { get; set; }
-
     }
 }

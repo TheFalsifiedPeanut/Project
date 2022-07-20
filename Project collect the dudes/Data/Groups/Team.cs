@@ -16,12 +16,15 @@
         /// </summary>
         public ushort id { get; set; }
 
-        public byte starLevel { get; set; }
-
         /// <summary>
         /// The name of the team.
         /// </summary>
         public string name { get; set; }
+
+        /// <summary>
+        /// The star level of the team.
+        /// </summary>
+        public byte starLevel { get; set; }
         
         /// <summary>
         /// The ID of the squad this team belongs to.
@@ -36,20 +39,25 @@
         
         #endregion
 
+        #region Initialisation
+        
         /// <summary>
         /// A constructor for the Team.
         /// </summary>
         /// <param name="id"> The ID of the team. </param>
         /// <param name="name"> The name of the team. </param>
+        /// <param name="starLevel"> The star level of the team. </param>
         /// <param name="squadID"> The ID of the squad this team belongs to. </param>
         public Team(ushort id, string name, ushort squadID, byte starLevel)
         {
             this.id = id;
             this.name = name;
+            this.starLevel = starLevel;
             this.squadID = squadID;
             units = new HashSet<ushort>();
-            this.starLevel = starLevel;
         }
+
+        #endregion
 
         #region Units
 
@@ -75,7 +83,7 @@
         /// </summary>
         /// <param name="id"> The ID of the unit to remove. </param>
         /// <returns> Returns whether the unit was removed. </returns>
-        public bool RemoveUnit(ushort id)
+        public bool RemoveUnitByID(ushort id)
         {
             return units.Remove(id);
         }
@@ -85,7 +93,7 @@
         /// </summary>
         /// <param name="unit"> The unit to remove. </param>
         /// <returns> Returns whether the unit was removed. </returns>
-        public bool RemoveUnit(Unit unit)
+        public bool RemoveUnitByValue(Unit unit)
         {
             return units.Remove(unit.id);
         }
