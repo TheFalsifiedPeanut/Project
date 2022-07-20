@@ -48,13 +48,13 @@
         /// <param name="name"> The name of the team. </param>
         /// <param name="starLevel"> The star level of the team. </param>
         /// <param name="squadID"> The ID of the squad this team belongs to. </param>
-        public Team(ushort id, string name, ushort squadID, byte starLevel)
+        public Team(ushort id, string name, ushort squadID, byte starLevel, HashSet<ushort> units)
         {
             this.id = id;
             this.name = name;
             this.starLevel = starLevel;
             this.squadID = squadID;
-            units = new HashSet<ushort>();
+            this.units = units;
         }
 
         #endregion

@@ -12,18 +12,17 @@ namespace Collect_Dudes.World.Generators
 {
     internal static class TeamGenerator
     {
-        public static Team TeamGenerator(ushort id, byte agencyStarLevel)
+        public static Team TeamGenerator(ushort id, byte starLevel, Agency agency)
         {
             Random random = new Random();
+            HashSet<ushort> units = new HashSet<ushort>();
             for (int i = 0; i < InternalSettings.teamSize; i++)
             {
                 byte unitLevelIndex;
-                byte unitLevel;
-                List<Unit> unitRange;
-                switch (agencyStarLevel)
+                byte unitLevel = 1;
+                switch (agency.starLevel)
                 {
                     case 1:
-                        unitRange = UnitPool.GetData().Where(unit => unit.starLevel == 1 || unit.starLevel == 2 || unit.starLevel == 3).ToList();
                         unitLevelIndex = (byte)(random.Next(1,7));
                         if (unitLevelIndex <= 2)
                         {
@@ -39,7 +38,6 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 2:
-                        unitRange = UnitPool.GetData().Where(unit => unit.starLevel == 1 || unit.starLevel == 2 || unit.starLevel == 3 || unit.starLevel == 4).ToList();
                         unitLevelIndex = (byte)(random.Next(1, 15));
                         if (unitLevelIndex <= 2)
                         {
@@ -59,7 +57,6 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 3:
-                        unitRange = UnitPool.GetData().Where(unit => unit.starLevel == 2 || unit.starLevel == 3 || unit.starLevel == 4).ToList();
                         unitLevelIndex = (byte)(random.Next(1,12));
                         if (unitLevelIndex <= 4)
                         {
@@ -75,7 +72,6 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 4:
-                        unitRange = UnitPool.GetData().Where(unit => unit.starLevel == 2 || unit.starLevel == 3 || unit.starLevel == 4 || unit.starLevel == 5).ToList();
                         unitLevelIndex = (byte)(random.Next(1, 10));
                         if (unitLevelIndex <= 1)
                         {
@@ -95,7 +91,6 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 5:
-                        unitRange = UnitPool.GetData().Where(unit => unit.starLevel == 3 || unit.starLevel == 4 || unit.starLevel == 5).ToList();
                         unitLevelIndex = (byte)(random.Next(1, 9));
                         if (unitLevelIndex <= 5)
                         {
@@ -111,10 +106,14 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                 }
-                
+
+                List<Unit> unitRange = agency.squad.GetUnitsAsUnit().Where(unit => unit.starLevel == unitLevel && unit.teamID != 0).ToList();
+                Unit newUnit = unitRange[random.Next(0, unitRange.Count)];
+                newUnit.teamID = id;
+                units.Add(newUnit.id);
             }
 
-            return new Team(id, "Team " + id, squadID);
+            return new Team(id, "Team " + id, agency.id, starLevel, units);
         }
     }
 }

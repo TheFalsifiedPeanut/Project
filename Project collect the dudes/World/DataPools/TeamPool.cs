@@ -40,9 +40,98 @@ namespace Collect_Dudes.World.DataPools
                             teamCount = (byte)(random.Next(3, 5));
                             break;
                     }
-                    for (int j = 0; j < teamCount; j++)
+                    switch (agencyStarLevel)
                     {
-                        TeamGenerator.TeamGenerator(, agency);
+                        case 1:
+                            for (int j = 0; j < teamCount; j++)
+                            {
+
+                                if (j == 0)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(1,4)), agency);
+                                }
+                                else if (j == 1)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(1, 3)), agency);
+                                }
+                                else
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(2, 4)), agency);
+                                }
+
+                            }
+                            break;
+                        case 2:
+                            for (int j = 0; j < teamCount; j++)
+                            {
+                                if (j == 0)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(1, 4)), agency);
+                                }
+                                else if (j == 1)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(1, 3)), agency);
+                                }
+                                else if (j == 2)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(2, 3)), agency);
+                                }
+                                else
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(2, 4)), agency);
+                                }
+                                
+                            }
+                            break;
+                        case 3:
+                            for (int j = 0; j < teamCount; j++)
+                            {
+                                if (j == 0)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(1, 5)), agency);
+                                }
+                                else if (j == 1)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(1, 4)), agency);
+                                }
+                                else
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(2, 4)), agency);
+                                }
+
+                            }
+                            break;
+                        case 4:
+                            for (int j = 0; j < teamCount; j++)
+                            {
+                                if (j == 0 || j == 1)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(2, 5)), agency);
+                                }
+                                else
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(2, 4)), agency);
+                                }
+                            }
+                            break;
+                        case 5:
+                            for (int j = 0; j < teamCount; j++)
+                            {
+                                if (j == 0)
+                                {
+                                    TeamGenerator.TeamGenerator(id, 5, agency);
+                                }
+                                else if (j == 1 || j == 2)
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(3, 6)), agency);
+                                }
+                                else
+                                {
+                                    TeamGenerator.TeamGenerator(id, (byte)(random.Next(2, 5)), agency);
+                                }
+
+                            }
+                            break;
                     }
                 }
             }

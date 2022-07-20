@@ -1,5 +1,6 @@
 ﻿namespace Collect_Dudes.Data.Groups
 {
+    using Collect_Dudes.World.DataPools;
     using General;
     using System.Collections.Generic;
     using System.Linq;
@@ -27,12 +28,31 @@
         /// A hash set of all the IDs of units in the team.
         /// All IDs are unique and a hash set guarantees to not have duplicates of a unit.
         /// </summary>
-        HashSet<ushort> units { get; set; }
+        HashSet<ushort> unitIDs { get; set; }
         
         /// <summary>
         /// A hash set of all the teams in the squad.
         /// </summary>
         HashSet<Team> teams { get; set; }
+
+        #endregion
+
+        #region Getters
+
+        public HashSet<ushort> GetUnits()
+        {
+            return unitIDs;
+        }
+
+        public HashSet<Unit> GetUnitsAsUnit()
+        {
+            HashSet<Unit> units = new HashSet<Unit>();
+            foreach (ushort unitID in unitIDs)
+            {
+                 units.Add(UnitPool.GetDataByID(unitID));
+            }
+            return units;
+        }
 
         #endregion
 
@@ -45,7 +65,7 @@
         /// <param name="units"> A hash set of all the IDs of units in the team. </param>
         public Squad(byte starLevel, HashSet<ushort> units)
         {
-            this.units = units; 
+            this.unitIDs = units; 
             this.starLevel = starLevel;
             teams = new HashSet<Team>();
         }
@@ -61,7 +81,7 @@
         /// <returns> Returns whether the unit was added. </returns>
         public bool AddUnit(Unit unit)
         {
-            bool added = units.Add(unit.id);
+            bool added = unitIDs.Add(unit.id);
 
             if (added)
             {
@@ -78,7 +98,7 @@
         /// <returns> Returns whether the unit was removed. </returns>
         public bool RemoveUnit(ushort id)
         {
-            return units.Remove(id);
+            return unitIDs.Remove(id);
         }
 
         /// <summary>
@@ -88,8 +108,10 @@
         /// <returns> Returns whether the unit was removed. </returns>
         public bool RemoveUnit(Unit unit)
         {
-            return units.Remove(unit.id);
+            return unitIDs.Remove(unit.id);
         }
+
+
 
         #endregion
 
