@@ -10,7 +10,7 @@ namespace Collect_Dudes.World.DataPools
 {
     internal class UnitPool : DataPool<Unit>
     {
-        public UnitPool(int initialPoolSize) : base(initialPoolSize)
+        public UnitPool(int initialPoolSize) : base()
         {
             if (dataPool is null)
             {

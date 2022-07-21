@@ -26,15 +26,15 @@ namespace Collect_Dudes.World.Generators
                 unitIDs.Add(uniqueUnit.id);
             }
 
-            return new Squad(unitIDs, starLevel);
+            return new Squad(starLevel, unitIDs);
         }
 
         static Unit GetUniqueUnit(Random random)
         {
             int unitIndex = random.Next(0, UnitPool.GetDataCount());
-            if (UnitPool.GetUnitByIndex(unitIndex).squadID == 0)
+            if (UnitPool.GetDataByIndex(unitIndex).squadID == 0)
             {
-                return UnitPool.GetUnitByIndex(unitIndex);
+                return UnitPool.GetDataByIndex(unitIndex);
             }
             return GetUniqueUnit(random);
         }

@@ -37,16 +37,16 @@
         #endregion
 
         #region Initialisation
-        
+
         /// <summary>
         /// A constructor for the Agency.
         /// </summary>
         /// <param name="id"> The ID of the agency. </param>
         /// <param name="name"> The name of the agency. </param>
         /// <param name="starLevel"> The star level of the agency. </param>
-        /// <param name="squad"> The squad of units belonging to the agency. </param>
         /// <param name="money"> The amount of money the agency currently has. </param>
-        public Agency(ushort id, string name, byte starLevel, Squad squad, int money)
+        /// <param name="squad"> The squad of units belonging to the agency. </param>
+        public Agency(ushort id, string name, byte starLevel, int money, Squad squad)
         {
             this.id = id;
             this.name = name;

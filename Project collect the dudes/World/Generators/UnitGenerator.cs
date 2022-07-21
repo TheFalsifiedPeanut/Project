@@ -11,50 +11,55 @@ namespace Collect_Dudes.World.Generators
 {
     internal static class UnitGenerator
     {
-        public static Unit GenerateUnit(ushort ID)
+        public static Unit GenerateUnit(ushort id)
         {
 
             Random random = new Random();
             // Random.Next is exclusive for the upper bounds.
             byte starIndex = (byte)(random.Next(1, 26));
-            StarLevel starLevel = StarLevel.fiveStar;
+            StarLevel starLevel = StarLevel.FIVE;
             if (starIndex <= 5)
             {
-                starLevel = StarLevel.oneStar;
+                starLevel = StarLevel.ONE;
             }
             else if (starIndex <= 12)
             {
-                starLevel = StarLevel.twoStar;
+                starLevel = StarLevel.TWO;
             }
             else if (starIndex <= 20)
             {
-                starLevel = StarLevel.threeStar;
+                starLevel = StarLevel.THREE;
             }
             else if (starIndex <= 23)
             {
-                starLevel = StarLevel.fourStar;
+                starLevel = StarLevel.FOUR;
             }
+            return GenerateUnit(id, starLevel);
+        }
+        public static Unit GenerateUnit(ushort id, StarLevel starLevel)
+        {
+            Random random = new Random();
             int baseAttributePoints = 0;
             int capacityAttributePoints = 0;
             switch (starLevel)
             {
-                case StarLevel.oneStar:
+                case StarLevel.ONE:
                     baseAttributePoints = InternalSettings.baseAttributePoints;
                     capacityAttributePoints = InternalSettings.oneStarAttributePointsMaximum;
                     break;
-                case StarLevel.twoStar:
+                case StarLevel.TWO:
                     baseAttributePoints = InternalSettings.oneStarAttributePointsMaximum;
                     capacityAttributePoints = InternalSettings.twoStarAttributePointsMaximum;
                     break;
-                case StarLevel.threeStar:
+                case StarLevel.THREE:
                     baseAttributePoints = InternalSettings.twoStarAttributePointsMaximum;
                     capacityAttributePoints = InternalSettings.threeStarAttributePointsMaximum;
                     break;
-                case StarLevel.fourStar:
+                case StarLevel.FOUR:
                     baseAttributePoints = InternalSettings.threeStarAttributePointsMaximum;
                     capacityAttributePoints = InternalSettings.fourStarAttributePointsMaximum;
                     break;
-                case StarLevel.fiveStar:
+                case StarLevel.FIVE:
                     baseAttributePoints = InternalSettings.fourStarAttributePointsMaximum;
                     capacityAttributePoints = InternalSettings.fiveStarAttributePointsMaximum;
                     break;
@@ -115,8 +120,10 @@ namespace Collect_Dudes.World.Generators
             float dodgeChance = agility * InternalSettings.dodgeChancePerAgility;
             float basePhysicalDamage = strength * InternalSettings.basePhysicalDamagePerStrength;
             float physicalCritChance = agility * InternalSettings.physicalCritChancePerAgility;
+            byte leadership = (byte)(random.Next(1, 21));
+            byte teamwork = (byte)(random.Next(1, 21));
 
-            return new Unit(ID, "UNIT " + ID, new Date(1,1,1), strength, agility, intelligence, health, healthRegen, mana, manaRegen, stamina, staminaRegen, speed, physicalResistance, magicResistance, hitChance, dodgeChance, basePhysicalDamage, physicalCritChance, Data.Mental.Morale.Neutral, Data.Mental.Happiness.Indifferent, (byte)(starLevel));
+            return new Unit(id, "UNIT " + id, new Date(1, 1, 1), (byte)starLevel, strength, agility, intelligence, health, healthRegen, mana, manaRegen, stamina, staminaRegen, speed, physicalResistance, magicResistance, hitChance, dodgeChance, basePhysicalDamage, physicalCritChance, leadership, teamwork, Data.Mental.Morale.Neutral, Data.Mental.Happiness.Indifferent);
         }
     }
 }

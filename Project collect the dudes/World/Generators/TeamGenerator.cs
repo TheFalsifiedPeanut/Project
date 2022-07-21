@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Collect_Dudes.Serialization;
 using Collect_Dudes.World.DataPools;
+using Collect_Dudes.Data.Units.Enums;
 
 namespace Collect_Dudes.World.Generators
 {
     internal static class TeamGenerator
     {
-        public static Team TeamGenerator(ushort id, byte starLevel, Agency agency)
+        public static Team GenerateTeam(ushort id, byte starLevel, Agency agency)
         {
             Random random = new Random();
             HashSet<ushort> units = new HashSet<ushort>();
@@ -108,7 +109,15 @@ namespace Collect_Dudes.World.Generators
                 }
 
                 List<Unit> unitRange = agency.squad.GetUnitsAsUnit().Where(unit => unit.starLevel == unitLevel && unit.teamID != 0).ToList();
-                Unit newUnit = unitRange[random.Next(0, unitRange.Count)];
+                Unit newUnit;
+                if (unitRange.Count > 0)
+                {
+                    newUnit = unitRange[random.Next(0, unitRange.Count)];
+                }
+                else
+                {
+                    newUnit = UnitGenerator.GenerateUnit(UnitPool.FindFirstFreeID(), (StarLevel)(unitLevel));
+                }
                 newUnit.teamID = id;
                 units.Add(newUnit.id);
             }

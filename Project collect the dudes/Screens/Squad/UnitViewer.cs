@@ -32,9 +32,9 @@
         public override void Render()
         {
             Console.WriteLine(unit.name + "\n-General Information-\nDate of Birth: " + unit.birthday.GetDay() + "/" + unit.birthday.GetMonth() + "/" + unit.birthday.GetYear() + "\nAge: " + ((IAge)unit).age + "\n\n");
-            Console.WriteLine("-Attributes-\nStrength: " + unit.strength + "\n Agility: " + unit.agility + "\n Intelligence: " + unit.intelligence + "\n");
+            Console.WriteLine("-Attributes-\nStrength: " + unit.strength + "\nAgility: " + unit.agility + "\nIntelligence: " + unit.intelligence + "\n");
             Console.WriteLine("-Statistics-\nHealth: " + unit.maximumHealth + "\nHealth Regeneration: " + unit.healthRegeneration + "\nMana: " + unit.maximumMana + "\nMana Regeneration: " + unit.manaRegeneration + "\nStamina: " + unit.maximumStamina + "\nStamina Regeneration: " + unit.staminaRegeneration + "\nSpeed: " + unit.speed + "\nPhysical Resistance: " + unit.physicalResistance + "\nMagical Resistance: " + unit.magicalResistance + "\nHit Chance: " + unit.hitChance + "\nDodge Chance: " + unit.dodgeChance + "\nPhysical Damage: " + unit.basePhysicalDamage + "\nCritical Chance: " + unit.physicalCriticalChance + "\n");
-            Console.WriteLine("-Mental Statistics-\nLeadership: " + unit.leadership + "\n Teamwork: " + unit.teamwork + "\nMorale: " + unit.morale + "\nHappiness: " + unit.happiness + "\nMentalTraits: " + unit.mentalTraits + "\n");
+            Console.WriteLine("-Mental Statistics-\nLeadership: " + unit.leadership + "\nTeamwork: " + unit.teamwork + "\nMorale: " + unit.morale + "\nHappiness: " + unit.happiness + "\nMentalTraits: " + unit.mentalTraits + "\n");
             Console.WriteLine("-Employment-\nWage: " + unit.wage + "\nTerm Remaining: " + unit.termRemaining + "\nTeamID: " + unit.teamID + "\n");
 
             byte choice = Inputs.ChoiceDialogue(string.Empty, TextUtilities.divider, new Dictionary<ConsoleKey, ChoiceEntry>()

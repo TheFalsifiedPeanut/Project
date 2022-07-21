@@ -45,19 +45,19 @@ namespace Collect_Dudes.World.DataPools
         }
         #endregion
 
-        public DataPool(int initialPoolSize)
+        public DataPool()
         {
             data = new List<T>();
         }
 
-        protected ushort FindFirstFreeID()
+        public static ushort FindFirstFreeID()
         {
             bool takenID = false;
             for (ushort i = 0; i < ushort.MaxValue; i++)
             {
-                for (int j = 0; j < data.Count; j++)
+                for (int j = 0; j < dataPool.data.Count; j++)
                 {
-                    if (i == data[j].id)
+                    if (i == dataPool.data[j].id)
                     {
                         takenID = true;
                         break;

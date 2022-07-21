@@ -10,7 +10,7 @@ namespace Collect_Dudes.World.DataPools
 {
     internal class AgencyPool : DataPool<Agency>
     {
-        public AgencyPool(int initialPoolSize) : base(initialPoolSize)
+        public AgencyPool(int initialPoolSize) : base()
         {
             if (dataPool is null)
             {

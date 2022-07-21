@@ -25,6 +25,7 @@
             new Time(1, 1, 2030);
             new UnitPool(1000);
             new AgencyPool(10);
+            new TeamPool();
 
             new ScreenManager();
             ScreenManager.QuickRender(new MainMenu());

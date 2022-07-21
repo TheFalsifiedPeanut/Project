@@ -131,7 +131,7 @@
                 return false;
             }
             
-            return teams.Add(new Team(id, name, id, (byte)StarLevel.ONE));
+            return teams.Add(new Team(id, name, id, (byte)StarLevel.ONE, new HashSet<ushort>()));
         }
 
         /// <summary>

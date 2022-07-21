@@ -40,7 +40,7 @@ namespace Collect_Dudes.World.Generators
                     break;
             }
 
-            return new Agency(id, "Agency " + id, SquadGenerator.GenerateSquad(id), random.Next(minMoneyValue, maxMoneyValue), (byte)(starLevel));
+            return new Agency(id, "Agency " + id, (byte)(starLevel), random.Next(minMoneyValue, maxMoneyValue), SquadGenerator.GenerateSquad(id, (byte)(starLevel)));
 
         }
     }
