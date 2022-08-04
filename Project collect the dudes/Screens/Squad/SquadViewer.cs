@@ -26,7 +26,7 @@
             Unit[] units = JSONData<Unit[]>.LoadData(InternalSettings.unitDataPath);
             units = UnitPool.GetData().ToArray();
 
-            Console.WriteLine("|\tName\t   | Age | STR | AGI | INT |  Morale  |  Happiness  |");
+            Console.WriteLine("| Index |\tName\t   | Age | STR | AGI | INT |  Morale  |  Happiness  |");
             Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
 
             byte choiceIndex = 0;
@@ -45,7 +45,7 @@
                     Unit unit = units[i];
                     
                     // We add 48 to get the number key as '1' is key 48.
-                    choiceOptions.Add((ConsoleKey) (choiceIndex + 48), TextUtilities.BuildChoiceEntry("|" + TextUtilities.Spacing(20, unit.name.Length) + unit.name + "|" + TextUtilities.Spacing(5, ((IAge) unit).age.ToString().Length) + ((IAge) unit).age + "|" + TextUtilities.Spacing(5, unit.strength.ToString().Length) + unit.strength + "|" + TextUtilities.Spacing(5, unit.agility.ToString().Length) + unit.agility + "|" + TextUtilities.Spacing(5, unit.intelligence.ToString().Length) + unit.intelligence + "|" + TextUtilities.Spacing(10, unit.morale.ToString().Length) + unit.morale + "|" + TextUtilities.Spacing(13, unit.happiness.ToString().Length) + unit.happiness + "|"));
+                    choiceOptions.Add((ConsoleKey) (choiceIndex + 48), TextUtilities.BuildChoiceEntry("   |" + TextUtilities.Spacing(18, unit.name.Length) + unit.name + "|" + TextUtilities.Spacing(5, ((IAge) unit).age.ToString().Length) + ((IAge) unit).age + "|" + TextUtilities.Spacing(5, unit.strength.ToString().Length) + unit.strength + "|" + TextUtilities.Spacing(5, unit.agility.ToString().Length) + unit.agility + "|" + TextUtilities.Spacing(5, unit.intelligence.ToString().Length) + unit.intelligence + "|" + TextUtilities.Spacing(10, unit.morale.ToString().Length) + unit.morale + "|" + TextUtilities.Spacing(13, unit.happiness.ToString().Length) + unit.happiness + "|"));
                     
                     choiceIndex++;
                 }

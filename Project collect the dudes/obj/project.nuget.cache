@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VsnTYCHV5W3ppt6dY5t4dmnOspGzlG0rZWZ50YUQSWf+W51w1GPFefPpLOGBMeEelRitnCQ7gkB3JLzmfCBpnw==",
+  "dgSpecHash": "szK3+FlqMwfTDW611vFvS/UoiNndeC+s+UfEI0XpqPUSbK5QF4JGHu0eT31DMmCO93K+K3zDxsQd5mHsH/5USQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
+  "projectFilePath": "C:\\Users\\georg\\OneDrive - NSW Department of Education\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\georg\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
+      "projectUniqueName": "C:\\Users\\georg\\OneDrive - NSW Department of Education\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
       "projectName": "Project collect the dudes",
-      "projectPath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
+      "projectPath": "C:\\Users\\georg\\OneDrive - NSW Department of Education\\Documents\\GitHub\\Project\\Project collect the dudes\\Project collect the dudes.csproj",
       "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\Project\\Project collect the dudes\\obj\\",
+      "outputPath": "C:\\Users\\georg\\OneDrive - NSW Department of Education\\Documents\\GitHub\\Project\\Project collect the dudes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
