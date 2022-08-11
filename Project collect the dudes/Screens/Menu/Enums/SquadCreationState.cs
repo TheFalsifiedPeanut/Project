@@ -12,6 +12,7 @@ namespace Collect_Dudes.Screens.Menu.Enums
         MAIN,
         SECONDARY,
         ALTMAIN,
-        ALTSECONDARY
+        ALTSECONDARY,
+        FINISHED
     }
 }

@@ -26,7 +26,7 @@
             switch (choice)
             {
                 case 0:
-                    ScreenManager.QuickRender(new Overworld());
+                    ScreenManager.QuickRender(new SquadCreator());
 
                     break;
                 

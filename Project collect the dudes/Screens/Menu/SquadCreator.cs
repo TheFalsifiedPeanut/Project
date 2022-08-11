@@ -29,7 +29,6 @@ namespace Collect_Dudes.Screens.Menu
             Dictionary<ConsoleKey, ChoiceEntry> choiceEntries = new Dictionary<ConsoleKey, ChoiceEntry>();
 
 
-
             switch (squadCreationState)
             {
                 case SquadCreationState.NAME:
@@ -63,9 +62,14 @@ namespace Collect_Dudes.Screens.Menu
                     break;
                 case SquadCreationState.ALTSECONDARY:
                     choiceDialogue = "Please choose your squad's ALTERNATE SECONDARY COLOUR: ";
-                    for(int i = 0; i < colours.Length; i++)
+                    int altChoiceKeyIndex = 0;
+                    for (int i = 0; i < colours.Length; i++)
                     {
-                        choiceEntries.Add(choiceKeys[i], TextUtilities.BuildChoiceEntry(colours[i]));
+                        if (colours[i] != mainColour)
+                        {
+                            choiceEntries.Add(choiceKeys[altChoiceKeyIndex], TextUtilities.BuildChoiceEntry(colours[i]));
+                            altChoiceKeyIndex++;
+                        }
                     }
                     break;
 
@@ -75,42 +79,49 @@ namespace Collect_Dudes.Screens.Menu
 
             if (squadCreationState == SquadCreationState.NAME)
             {
-                Console.ReadLine();
+                Console.WriteLine(choiceDialogue);
+                squadName = Console.ReadLine();
             }
             
             else
             {
-                choiceEntries.Add(ConsoleKey.Backspace, TextUtilities.BuildChoiceEntry("Back"));
-                byte choice = Inputs.ChoiceDialogue(choiceDialogue, TextUtilities.divider, choiceEntries);
-
-                switch (choice)
+                //choiceEntries.Add(ConsoleKey.Backspace, TextUtilities.BuildChoiceEntry("Back"));
+                int choice = Inputs.ChoiceDialogue(choiceDialogue, TextUtilities.divider, choiceEntries);
+                if (choice < 0 || choice >= colours.Length)
                 {
-                    case 0:
-                        ScreenManager.QuickRender(new PlayMenu());
+                    ScreenManager.QuickRender(this);
+                }
 
+                switch (squadCreationState)
+                {
+                    case SquadCreationState.MAIN:
+                        
+                        mainColour = colours[choice];
                         break;
 
-                    case 1:
-                        // Exit the application.
-                        Environment.Exit(0);
-
+                    case SquadCreationState.ALTMAIN:
+                        int mainColourIndex = colours.ToList().IndexOf(mainColour);
+                        altMainColour = colours[choice < mainColourIndex ? choice : choice + 1];
                         break;
 
-                    default:
-                        // Redraw the page.
-                        ScreenManager.QuickRender(new MainMenu());
+                    case SquadCreationState.SECONDARY:
+                        secondaryColour = colours[choice];
 
+                        break;
+                    case SquadCreationState.ALTSECONDARY:
+                        int secondaryColourIndex = colours.ToList().IndexOf(secondaryColour);
+                        altSecondaryColour = colours[choice < secondaryColourIndex ? choice : choice + 1];
                         break;
                 }
             }
             squadCreationState++;
-            if (squadCreationState == SquadCreationState.ALTSECONDARY)
+            if (squadCreationState == SquadCreationState.FINISHED)
             {
                 ScreenManager.QuickRender(new Overworld());
             }
             else
             {
-                ScreenManager.QuickRender(new SquadCreator());
+                ScreenManager.QuickRender(this);
             }
             
         }
