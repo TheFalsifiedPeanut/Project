@@ -21,5 +21,9 @@ namespace Collect_Dudes.World.DataPools
                 }
             }
         }
+        public static void AddAgency(Agency agency)
+        {
+            GetData().Add(agency);
+        }
     }
 }

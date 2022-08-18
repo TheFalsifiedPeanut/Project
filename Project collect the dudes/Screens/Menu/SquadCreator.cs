@@ -8,6 +8,12 @@ using ConsoleUtilities.Colours;
 using ConsoleUtilities.Inputs;
 using ConsoleUtilities.Screens;
 using Collect_Dudes.Screens.Menu.Enums;
+using Collect_Dudes.Data.Groups;
+using Collect_Dudes.Data.Units.Enums;
+using Collect_Dudes.World.DataPools;
+using Collect_Dudes.Data.Player;
+using Collect_Dudes.World.Generators;
+using Collect_Dudes.Data.Units;
 
 namespace Collect_Dudes.Screens.Menu
 {
@@ -115,8 +121,22 @@ namespace Collect_Dudes.Screens.Menu
                 }
             }
             squadCreationState++;
+            
             if (squadCreationState == SquadCreationState.FINISHED)
             {
+                
+                Collect_Dudes.Data.Groups.Squad playerSquad = new Collect_Dudes.Data.Groups.Squad((byte)StarLevel.ONE, new HashSet<ushort>(), mainColour, secondaryColour, altMainColour, altSecondaryColour);
+
+                for (int i = 0; i < 6; i++)
+                {
+                    Unit unit = UnitGenerator.GenerateUnit(UnitPool.FindFirstFreeID(), StarLevel.ONE);
+                    UnitPool.AddUnit(unit);
+                    playerSquad.AddUnit(unit);
+                }
+
+                ushort agencyID = AgencyPool.FindFirstFreeID();
+                AgencyPool.AddAgency(new Agency(agencyID, squadName, (byte)StarLevel.ONE, 100, playerSquad));
+                PlayerManager.GetPlayerManager().player = new Player("Joe", new World.Date(0,0,0), agencyID);
                 ScreenManager.QuickRender(new Overworld());
             }
             else
@@ -130,5 +150,7 @@ namespace Collect_Dudes.Screens.Menu
             choiceKeys = new ConsoleKey[6] {ConsoleKey.D1, ConsoleKey.D2, ConsoleKey.D3, ConsoleKey.D4 ,ConsoleKey.D5, ConsoleKey.D6};
             colours = new string[6] { "Black", "White", "Red", "Blue", "Yellow", "Green" };
         }
+
+        
     }
 }

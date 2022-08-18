@@ -35,6 +35,11 @@
         /// </summary>
         HashSet<Team> teams { get; set; }
 
+        string mainColour { get; set; }
+        string secondaryColour { get; set; }
+        string altMainColour { get; set; }
+        string altSecondaryColour { get; set; }
+
         #endregion
 
         #region Getters
@@ -63,12 +68,25 @@
         /// </summary>
         /// <param name="starLevel"> The star level of the squad. </param>
         /// <param name="units"> A hash set of all the IDs of units in the team. </param>
-        public Squad(byte starLevel, HashSet<ushort> units)
+        public Squad(byte starLevel, HashSet<ushort> units, string mainColour, string secondaryColour, string altMainColour, string altSecondaryColour)
         {
             this.unitIDs = units; 
             this.starLevel = starLevel;
             teams = new HashSet<Team>();
+            this.mainColour = mainColour;
+            this.secondaryColour = secondaryColour;
+            this.altMainColour = altMainColour;
+            this.altSecondaryColour = altSecondaryColour;
         }
+
+        public Squad(ushort id, byte starLevel, HashSet<ushort> unitIDs)
+        {
+            this.id = id;
+            this.starLevel = starLevel;
+            this.unitIDs = unitIDs;
+        }
+
+
 
         #endregion
 

@@ -8,6 +8,7 @@
     /// </summary>
     internal class Player : IName, IAge
     {
+        
         #region Properties
         
         /// <summary>
@@ -20,6 +21,8 @@
         /// </summary>
         public Date birthday { get; set; }
 
+        public ushort playerSquadID { get; set; }
+
         #endregion
 
         /// <summary>
@@ -27,10 +30,11 @@
         /// </summary>
         /// <param name="name"> The name of the player. </param>
         /// <param name="birthday"> The birthday of the player. </param>
-        public Player(string name, Date birthday)
+        public Player(string name, Date birthday, ushort playerSquadID)
         {
             this.name = name;
             this.birthday = birthday;
+            this.playerSquadID = playerSquadID;
         }
 
     }

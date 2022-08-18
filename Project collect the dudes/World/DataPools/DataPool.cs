@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Collect_Dudes.World.DataPools
 {
-    internal class DataPool<T> where T : IIdentifier
+    internal abstract class DataPool<T> where T : IIdentifier
     {
         static protected DataPool<T> dataPool;
         protected List<T> data;
@@ -49,6 +49,12 @@ namespace Collect_Dudes.World.DataPools
         {
             data = new List<T>();
         }
+
+        
+        
+            
+        
+
 
         public static ushort FindFirstFreeID()
         {

@@ -26,7 +26,7 @@ namespace Collect_Dudes.World.Generators
                 unitIDs.Add(uniqueUnit.id);
             }
 
-            return new Squad(starLevel, unitIDs);
+            return new Squad(id, starLevel, unitIDs);
         }
 
         static Unit GetUniqueUnit(Random random)

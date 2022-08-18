@@ -1,5 +1,6 @@
 ﻿namespace Collect_Dudes.Screens.Squad
 {
+    using Collect_Dudes.Data.Player;
     using ConsoleUtilities.Inputs;
     using ConsoleUtilities.Screens;
     using ConsoleUtilities.Serialisation;
@@ -23,8 +24,16 @@
         public override void Render()
         {
             // TODO: Replace with the squad from the agency currently being viewed.
-            Unit[] units = JSONData<Unit[]>.LoadData(InternalSettings.unitDataPath);
-            units = UnitPool.GetData().ToArray();
+            //Unit[] units = JSONData<Unit[]>.LoadData(InternalSettings.unitDataPath);
+            //units = UnitPool.GetData().ToArray();
+
+            List<Unit> units = new List<Unit>();
+            HashSet<ushort> unitIDs = AgencyPool.GetDataByID(PlayerManager.GetPlayerManager().player.playerSquadID).squad.GetUnits();
+            foreach (ushort id in unitIDs)
+            {
+                units.Add(UnitPool.GetDataByID(id));
+            }
+            
 
             Console.WriteLine("| Index |\tName\t   | Age | STR | AGI | INT |  Morale  |  Happiness  |");
             Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
@@ -37,7 +46,7 @@
                 // TODO: Convert this system to use a page system to work with overflow of units to number keys.
                 for (int i = 0; i < 10; i++)
                 {
-                    if (i >= units.Length)
+                    if (i >= units.Count)
                     {
                         break;
                     }

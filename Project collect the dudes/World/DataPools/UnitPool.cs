@@ -21,5 +21,10 @@ namespace Collect_Dudes.World.DataPools
                 }
             }
         }
+
+        public static void AddUnit(Unit unit)
+        {
+            GetData().Add(unit);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace Collect_Dudes.Screens.Competitions
 {
+    using Collect_Dudes.Data.Competitions;
     using ConsoleUtilities.Screens;
     using Data.Groups;
     using System;
@@ -7,11 +8,7 @@
 
     internal class LeagueViewer : Screen
     {
-        List<Team> teams;
-
-        int wins;
-        int draws;
-        int losses;
+        League league;
 
         public override void Render()
         {
