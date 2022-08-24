@@ -1,14 +1,10 @@
-﻿using Collect_Dudes.Data.Units;
-using Collect_Dudes.Data.Units.Enums;
-using Collect_Dudes.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.World.Generators
+﻿namespace Collect_Dudes.World.Generators
 {
+    using Data.Units;
+    using Data.Units.Enums;
+    using Serialization;
+    using System;
+
     internal static class UnitGenerator
     {
         public static Unit GenerateUnit(ushort id)
@@ -16,7 +12,7 @@ namespace Collect_Dudes.World.Generators
 
             Random random = new Random();
             // Random.Next is exclusive for the upper bounds.
-            byte starIndex = (byte)(random.Next(1, 26));
+            int starIndex = random.Next(1, 26);
             StarLevel starLevel = StarLevel.FIVE;
             if (starIndex <= 5)
             {
@@ -66,9 +62,9 @@ namespace Collect_Dudes.World.Generators
 
             }
             int attributePoints = random.Next(baseAttributePoints, capacityAttributePoints) - (3 * InternalSettings.baseAttributeValue);
-            byte strength = InternalSettings.baseAttributeValue;
-            byte agility = InternalSettings.baseAttributeValue;
-            byte intelligence = InternalSettings.baseAttributeValue;
+            int strength = InternalSettings.baseAttributeValue;
+            int agility = InternalSettings.baseAttributeValue;
+            int intelligence = InternalSettings.baseAttributeValue;
             while (attributePoints > 0)
             {
                 attributePoints--;
@@ -113,17 +109,17 @@ namespace Collect_Dudes.World.Generators
             float manaRegen = intelligence * InternalSettings.manaRegenPerIntelligence;
             float stamina = agility * InternalSettings.staminaPerAgility;
             float staminaRegen = agility * InternalSettings.staminaRegenPerAgility;
-            byte speed = (byte)(agility * InternalSettings.speedPerAgility);
+            int speed = agility * InternalSettings.speedPerAgility;
             float physicalResistance = strength * InternalSettings.physicalResitancePerStrength;
             float magicResistance = intelligence * InternalSettings.magicResistancePerIntelligence;
             float hitChance = agility * InternalSettings.hitChancePerAgility;
             float dodgeChance = agility * InternalSettings.dodgeChancePerAgility;
             float basePhysicalDamage = strength * InternalSettings.basePhysicalDamagePerStrength;
             float physicalCritChance = agility * InternalSettings.physicalCritChancePerAgility;
-            byte leadership = (byte)(random.Next(1, 21));
-            byte teamwork = (byte)(random.Next(1, 21));
+            int leadership = random.Next(1, 21);
+            int teamwork = random.Next(1, 21);
 
-            return new Unit(id, "UNIT " + id, new Date(1, 1, 1), (byte)starLevel, strength, agility, intelligence, health, healthRegen, mana, manaRegen, stamina, staminaRegen, speed, physicalResistance, magicResistance, hitChance, dodgeChance, basePhysicalDamage, physicalCritChance, leadership, teamwork, Data.Mental.Morale.Neutral, Data.Mental.Happiness.Indifferent);
+            return new Unit(id, "UNIT " + id, new Date(1, 1, 1), (int)starLevel, strength, agility, intelligence, health, healthRegen, mana, manaRegen, stamina, staminaRegen, speed, physicalResistance, magicResistance, hitChance, dodgeChance, basePhysicalDamage, physicalCritChance, leadership, teamwork, Data.Mental.Morale.Neutral, Data.Mental.Happiness.Indifferent);
         }
     }
 }

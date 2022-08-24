@@ -1,13 +1,8 @@
-﻿using Collect_Dudes.Data.Units;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Collect_Dudes.World.Generators;
-
-namespace Collect_Dudes.World.DataPools
+﻿namespace Collect_Dudes.World.DataPools
 {
+    using Data.Units;
+    using Generators;
+
     internal class UnitPool : DataPool<Unit>
     {
         public UnitPool(int initialPoolSize) : base()

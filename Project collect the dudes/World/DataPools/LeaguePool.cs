@@ -1,13 +1,8 @@
-﻿using Collect_Dudes.Data.Competitions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Collect_Dudes.World.Enums;
-
-namespace Collect_Dudes.World.DataPools
+﻿namespace Collect_Dudes.World.DataPools
 {
+    using Data.Competitions;
+    using Enums;
+
     internal class LeaguePool : DataPool<League>
     {
         public LeaguePool() : base()

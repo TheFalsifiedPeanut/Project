@@ -15,6 +15,6 @@
         /// <summary>
         /// The age of the object.
         /// </summary>
-        ushort age => Time.GetYearsSince(birthday);
+        int age => Time.GetYearsSince(birthday);
     }
 }

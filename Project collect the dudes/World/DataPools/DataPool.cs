@@ -1,12 +1,8 @@
-﻿using Collect_Dudes.Data.General;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.World.DataPools
+﻿namespace Collect_Dudes.World.DataPools
 {
+    using Data.General;
+    using System.Collections.Generic;
+
     internal abstract class DataPool<T> where T : IIdentifier
     {
         static protected DataPool<T> dataPool;
@@ -49,13 +45,7 @@ namespace Collect_Dudes.World.DataPools
         {
             data = new List<T>();
         }
-
         
-        
-            
-        
-
-
         public static ushort FindFirstFreeID()
         {
             bool takenID = false;
@@ -80,10 +70,5 @@ namespace Collect_Dudes.World.DataPools
             }
             return 0;
         }
-
-
     }
-
-
-
 }

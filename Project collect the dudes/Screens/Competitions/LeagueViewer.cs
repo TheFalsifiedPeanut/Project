@@ -2,9 +2,7 @@
 {
     using Collect_Dudes.Data.Competitions;
     using ConsoleUtilities.Screens;
-    using Data.Groups;
     using System;
-    using System.Collections.Generic;
 
     internal class LeagueViewer : Screen
     {

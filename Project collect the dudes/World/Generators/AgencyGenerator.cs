@@ -1,13 +1,9 @@
-﻿using Collect_Dudes.Data.Groups;
-using Collect_Dudes.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.World.Generators
+﻿namespace Collect_Dudes.World.Generators
 {
+    using Data.Groups;
+    using Serialization;
+    using System;
+
     internal static class AgencyGenerator
     {
         public static Agency GenerateAgency(ushort id)
@@ -41,7 +37,6 @@ namespace Collect_Dudes.World.Generators
             }
 
             return new Agency(id, "Agency " + id, (byte)(starLevel), random.Next(minMoneyValue, maxMoneyValue), SquadGenerator.GenerateSquad(id, (byte)(starLevel)));
-
         }
     }
 }

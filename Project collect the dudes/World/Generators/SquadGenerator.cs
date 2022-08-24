@@ -1,18 +1,15 @@
-﻿using Collect_Dudes.Data.Groups;
-using Collect_Dudes.Data.Units;
-using Collect_Dudes.Serialization;
-using Collect_Dudes.World.DataPools;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.World.Generators
+﻿namespace Collect_Dudes.World.Generators
 {
+    using Data.Groups;
+    using Data.Units;
+    using DataPools;
+    using Serialization;
+    using System;
+    using System.Collections.Generic;
+
     internal static class SquadGenerator
     {
-        public static Squad GenerateSquad(ushort id, byte starLevel)
+        public static Squad GenerateSquad(ushort id, int starLevel)
         {
             Random random = new Random();
             HashSet<ushort> unitIDs = new HashSet<ushort>();

@@ -8,7 +8,6 @@
     /// </summary>
     internal class Player : IName, IAge
     {
-        
         #region Properties
         
         /// <summary>

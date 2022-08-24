@@ -22,7 +22,7 @@
         /// <summary>
         /// The star level of the agency.
         /// </summary>
-        public byte starLevel { get; set; }
+        public int starLevel { get; set; }
 
         /// <summary>
         /// The squad of units belonging to the agency.
@@ -46,7 +46,7 @@
         /// <param name="starLevel"> The star level of the agency. </param>
         /// <param name="money"> The amount of money the agency currently has. </param>
         /// <param name="squad"> The squad of units belonging to the agency. </param>
-        public Agency(ushort id, string name, byte starLevel, int money, Squad squad)
+        public Agency(ushort id, string name, int starLevel, int money, Squad squad)
         {
             this.id = id;
             this.name = name;

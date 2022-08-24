@@ -24,7 +24,7 @@
         /// <summary>
         /// The star level of the team.
         /// </summary>
-        public byte starLevel { get; set; }
+        public int starLevel { get; set; }
         
         /// <summary>
         /// The ID of the squad this team belongs to.
@@ -48,7 +48,7 @@
         /// <param name="name"> The name of the team. </param>
         /// <param name="starLevel"> The star level of the team. </param>
         /// <param name="squadID"> The ID of the squad this team belongs to. </param>
-        public Team(ushort id, string name, ushort squadID, byte starLevel, HashSet<ushort> units)
+        public Team(ushort id, string name, ushort squadID, int starLevel, HashSet<ushort> units)
         {
             this.id = id;
             this.name = name;

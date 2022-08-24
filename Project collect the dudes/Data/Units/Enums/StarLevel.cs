@@ -3,7 +3,7 @@
     /// <summary>
     /// The levels of star ratings used by objects.
     /// </summary>
-    internal enum StarLevel : byte
+    internal enum StarLevel
     {
         /// <summary>
         /// One star is the bottom level and any object possessing it are considered to be of the lowest quality.

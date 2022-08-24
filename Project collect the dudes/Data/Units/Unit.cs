@@ -26,7 +26,7 @@
         /// <summary>
         /// The star level of the unit.
         /// </summary>
-        public byte starLevel { get; set; }
+        public int starLevel { get; set; }
 
         /// <summary>
         /// The birthday of the unit.
@@ -40,17 +40,17 @@
         /// <summary>
         /// The strength of the unit. Determines base attack damage in melee combat.
         /// </summary>
-        public byte strength { get; set; }
+        public int strength { get; set; }
         
         /// <summary>
         /// The agility of the unit. Determines base attack damage in ranged combat.
         /// </summary>
-        public byte agility { get; set; }
+        public int agility { get; set; }
         
         /// <summary>
         /// The intelligence of the unit. Determines base attack damage in magic combat.
         /// </summary>
-        public byte intelligence { get; set; }
+        public int intelligence { get; set; }
         
         #endregion
 
@@ -95,7 +95,6 @@
         /// The maximum stamina the unit has. Used for physical attacks
         /// </summary>
         public float maximumStamina { get; set; }
-
         
         /// <summary>
         /// The current stamina regen the unit has.
@@ -105,7 +104,7 @@
         /// <summary>
         /// The speed the unit has. This is for calculating the rate of attack.
         /// </summary>
-        public byte speed { get; set; }
+        public int speed { get; set; }
         
         /// <summary>
         /// The physical resistance the unit has. This is the reduction in physical damage without armour.
@@ -144,12 +143,12 @@
         /// <summary>
         /// The leadership the unit has. This is for determining the ability to maintain steady the composure of other teammates.
         /// </summary>
-        public byte leadership { get; set; }
+        public int leadership { get; set; }
         
         /// <summary>
         /// The teamwork the unit has. This is for determining the ability to increase the chances of victory with more teammates around.
         /// </summary>
-        public byte teamwork { get; set; }
+        public int teamwork { get; set; }
         
         /// <summary>
         /// The morale the unit has. This is the confidence the unit has going into a fight.
@@ -223,7 +222,7 @@
         /// <param name="teamwork"> The teamwork of the unit. </param>
         /// <param name="morale"> The morale of the unit. </param>
         /// <param name="happiness"> The happiness of the unit. </param>
-        public Unit(ushort id, string name, Date birthday, byte starLevel, byte strength, byte agility, byte intelligence, float maximumHealth, float healthRegeneration, float maximumMana, float manaRegeneration, float maximumStamina, float staminaRegeneration, byte speed, float physicalResistance, float magicalResistance, float hitChance, float dodgeChance, float basePhysicalDamage, float physicalCriticalChance, byte leadership, byte teamwork, Morale morale, Happiness happiness)
+        public Unit(ushort id, string name, Date birthday, int starLevel, int strength, int agility, int intelligence, float maximumHealth, float healthRegeneration, float maximumMana, float manaRegeneration, float maximumStamina, float staminaRegeneration, int speed, float physicalResistance, float magicalResistance, float hitChance, float dodgeChance, float basePhysicalDamage, float physicalCriticalChance, int leadership, int teamwork, Morale morale, Happiness happiness)
         {
             this.id = id;
             this.name = name;

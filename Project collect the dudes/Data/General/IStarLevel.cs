@@ -8,6 +8,6 @@
         /// <summary>
         /// The star level of the object.
         /// </summary>
-        public byte starLevel { get; set; }
+        public int starLevel { get; set; }
     }
 }

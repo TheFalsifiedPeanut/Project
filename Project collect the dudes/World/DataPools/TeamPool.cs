@@ -1,13 +1,9 @@
-﻿using Collect_Dudes.Data.Groups;
-using Collect_Dudes.World.Generators;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collect_Dudes.World.DataPools
+﻿namespace Collect_Dudes.World.DataPools
 {
+    using Data.Groups;
+    using Generators;
+    using System;
+
     internal class TeamPool : DataPool<Team>
     {
         public TeamPool() : base()
@@ -20,24 +16,24 @@ namespace Collect_Dudes.World.DataPools
                 for (int i = 0; i < AgencyPool.GetDataCount(); i++)
                 {
                     Agency agency = AgencyPool.GetDataByIndex(i);
-                    byte teamCount = 0;
-                    byte agencyStarLevel = agency.starLevel;
+                    int teamCount = 0;
+                    int agencyStarLevel = agency.starLevel;
                     switch (agencyStarLevel)
                     {
                         case 1:
-                            teamCount = (byte)(random.Next(1, 3));
+                            teamCount = random.Next(1, 3);
                             break;
                         case 2:
-                            teamCount = (byte)(random.Next(1, 4));
+                            teamCount = random.Next(1, 4);
                             break;
                         case 3:
-                            teamCount = (byte)(random.Next(2, 4));
+                            teamCount = random.Next(2, 4);
                             break;
                         case 4:
-                            teamCount = (byte)(random.Next(2, 5));
+                            teamCount = random.Next(2, 5);
                             break;
                         case 5:
-                            teamCount = (byte)(random.Next(3, 5));
+                            teamCount = random.Next(3, 5);
                             break;
                     }
                     switch (agencyStarLevel)
@@ -49,15 +45,15 @@ namespace Collect_Dudes.World.DataPools
 
                                 if (j == 0)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(1,4)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(1,4), agency);
                                 }
                                 else if (j == 1)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(1, 3)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(1, 3), agency);
                                 }
                                 else
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(2, 4)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(2, 4), agency);
                                 }
 
                             }
@@ -69,19 +65,19 @@ namespace Collect_Dudes.World.DataPools
                                 ushort id = FindFirstFreeID();
                                 if (j == 0)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(1, 4)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(1, 4), agency);
                                 }
                                 else if (j == 1)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(1, 3)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(1, 3), agency);
                                 }
                                 else if (j == 2)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(2, 3)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(2, 3), agency);
                                 }
                                 else
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(2, 4)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(2, 4), agency);
                                 }
                                 
                             }
@@ -92,15 +88,15 @@ namespace Collect_Dudes.World.DataPools
                                 ushort id = FindFirstFreeID();
                                 if (j == 0)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(1, 5)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(1, 5), agency);
                                 }
                                 else if (j == 1)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(1, 4)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(1, 4), agency);
                                 }
                                 else
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(2, 4)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(2, 4), agency);
                                 }
 
                             }
@@ -111,11 +107,11 @@ namespace Collect_Dudes.World.DataPools
                                 ushort id = FindFirstFreeID();
                                 if (j == 0 || j == 1)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(2, 5)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(2, 5), agency);
                                 }
                                 else
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(2, 4)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(2, 4), agency);
                                 }
                             }
                             break;
@@ -129,11 +125,11 @@ namespace Collect_Dudes.World.DataPools
                                 }
                                 else if (j == 1 || j == 2)
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(3, 6)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(3, 6), agency);
                                 }
                                 else
                                 {
-                                    TeamGenerator.GenerateTeam(id, (byte)(random.Next(2, 5)), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(2, 5), agency);
                                 }
 
                             }

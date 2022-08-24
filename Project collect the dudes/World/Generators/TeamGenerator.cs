@@ -13,18 +13,18 @@ namespace Collect_Dudes.World.Generators
 {
     internal static class TeamGenerator
     {
-        public static Team GenerateTeam(ushort id, byte starLevel, Agency agency)
+        public static Team GenerateTeam(ushort id, int starLevel, Agency agency)
         {
             Random random = new Random();
             HashSet<ushort> units = new HashSet<ushort>();
             for (int i = 0; i < InternalSettings.teamSize; i++)
             {
-                byte unitLevelIndex;
-                byte unitLevel = 1;
+                int unitLevelIndex;
+                int unitLevel = 1;
                 switch (agency.starLevel)
                 {
                     case 1:
-                        unitLevelIndex = (byte)(random.Next(1,7));
+                        unitLevelIndex = random.Next(1,7);
                         if (unitLevelIndex <= 2)
                         {
                             unitLevel = 1;
@@ -39,7 +39,7 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 2:
-                        unitLevelIndex = (byte)(random.Next(1, 15));
+                        unitLevelIndex = random.Next(1, 15);
                         if (unitLevelIndex <= 2)
                         {
                             unitLevel = 1;
@@ -58,7 +58,7 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 3:
-                        unitLevelIndex = (byte)(random.Next(1,12));
+                        unitLevelIndex = random.Next(1,12);
                         if (unitLevelIndex <= 4)
                         {
                             unitLevel = 2;
@@ -73,7 +73,7 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 4:
-                        unitLevelIndex = (byte)(random.Next(1, 10));
+                        unitLevelIndex = random.Next(1, 10);
                         if (unitLevelIndex <= 1)
                         {
                             unitLevel = 2;
@@ -92,7 +92,7 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                     case 5:
-                        unitLevelIndex = (byte)(random.Next(1, 9));
+                        unitLevelIndex = random.Next(1, 9);
                         if (unitLevelIndex <= 5)
                         {
                             unitLevel = 3;

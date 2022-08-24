@@ -1,6 +1,6 @@
 ﻿namespace Collect_Dudes.Data.Groups
 {
-    using Collect_Dudes.World.DataPools;
+    using World.DataPools;
     using General;
     using System.Collections.Generic;
     using System.Linq;
@@ -22,7 +22,7 @@
         /// <summary>
         /// The star level of the squad.
         /// </summary>
-        public byte starLevel { get; set; }
+        public int starLevel { get; set; }
         
         /// <summary>
         /// A hash set of all the IDs of units in the team.
@@ -68,9 +68,9 @@
         /// </summary>
         /// <param name="starLevel"> The star level of the squad. </param>
         /// <param name="units"> A hash set of all the IDs of units in the team. </param>
-        public Squad(byte starLevel, HashSet<ushort> units, string mainColour, string secondaryColour, string altMainColour, string altSecondaryColour)
+        public Squad(int starLevel, HashSet<ushort> units, string mainColour, string secondaryColour, string altMainColour, string altSecondaryColour)
         {
-            this.unitIDs = units; 
+            unitIDs = units; 
             this.starLevel = starLevel;
             teams = new HashSet<Team>();
             this.mainColour = mainColour;
@@ -79,7 +79,7 @@
             this.altSecondaryColour = altSecondaryColour;
         }
 
-        public Squad(ushort id, byte starLevel, HashSet<ushort> unitIDs)
+        public Squad(ushort id, int starLevel, HashSet<ushort> unitIDs)
         {
             this.id = id;
             this.starLevel = starLevel;

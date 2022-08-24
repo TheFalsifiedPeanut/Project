@@ -3,7 +3,7 @@
     /// <summary>
     /// The levels of happiness a unit can have.
     /// </summary>
-    internal enum Happiness : byte
+    internal enum Happiness
     {
         /// <summary>
         /// The unit feels extremely at odds with the current state of their contract and most likely wish to leave.
