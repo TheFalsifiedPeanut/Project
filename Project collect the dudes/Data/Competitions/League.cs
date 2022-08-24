@@ -34,5 +34,10 @@ namespace Collect_Dudes.Data.Competitions
             }
         }
 
+        public int GetLeagueSize()
+        {
+            return teams.Length;
+        }
+
     }
 }
