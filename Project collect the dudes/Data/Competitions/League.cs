@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Collect_Dudes.Data.Competitions
 {
@@ -38,6 +39,14 @@ namespace Collect_Dudes.Data.Competitions
         {
             return teams.Length;
         }
+        public ushort GetTeamIDByIndex(int index)
+        {
+            return teams[index];
+        }
 
+        public CompetitionResults GetResultsByID(ushort id)
+        {
+           return results.First((competitionResult) => competitionResult.teamID == id);
+        }
     }
 }

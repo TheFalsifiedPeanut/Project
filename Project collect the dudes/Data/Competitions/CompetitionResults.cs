@@ -8,12 +8,12 @@ namespace Collect_Dudes.Data.Competitions
 {
     internal class CompetitionResults
     {
-        ushort teamID { get; set; }
+        public ushort teamID { get; set; }
 
-        int wins { get; set; }
-        int draws { get; set; }
-        int losses { get; set; }
-        int points { get; set; }
+        public int wins { get; set; }
+        public int draws { get; set; }
+        public int losses { get; set; }
+        public int points { get; set; }
         
 
 

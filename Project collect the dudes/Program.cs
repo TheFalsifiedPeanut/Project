@@ -25,9 +25,10 @@
 
             new Time(1, 1, 2030);
             new PlayerManager();
-            new UnitPool(1000);
-            new AgencyPool(10);
+            new UnitPool(10000);
+            new AgencyPool(100);
             new TeamPool();
+            new LeaguePool();
 
             new ScreenManager();
             ScreenManager.QuickRender(new MainMenu());
