@@ -37,10 +37,10 @@
                 else
                 {
                     bronzeLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID())).id);
-                    
+
                 }
 
-                
+
             }
             for (int i = 0; i < silverLeague.GetLeagueSize(); i++)
             {
@@ -52,7 +52,7 @@
                 }
                 else
                 {
-                    silverLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID())).id);
+                    silverLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
                     
                 }
 
@@ -68,7 +68,7 @@
                 }
                 else
                 {
-                    goldLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID())).id);
+                    goldLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
                     
                 }
 
@@ -84,7 +84,7 @@
                 }
                 else
                 {
-                    platniumLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID())).id);
+                    platniumLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
                     
                 }
 
@@ -100,8 +100,7 @@
                 }
                 else
                 {
-                    bronzeLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID())).id);
-                    
+                    bronzeLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
                 }
 
                 

@@ -69,8 +69,8 @@
         #endregion
         
         #region Squads
-        public static byte minSquadSize => 64;
-        public static byte maxSquadSize => 128;
+        public static byte minSquadSize => 24;
+        public static byte maxSquadSize => 32;
         #endregion
         
         #region Agency

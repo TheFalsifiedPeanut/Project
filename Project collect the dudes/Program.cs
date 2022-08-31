@@ -25,7 +25,7 @@
 
             new Time(1, 1, 2030);
             new PlayerManager();
-            new UnitPool(10000);
+            new UnitPool(100);
             new AgencyPool(100);
             new TeamPool();
             new LeaguePool();

@@ -6,6 +6,7 @@
     using Serialization;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     internal static class SquadGenerator
     {
@@ -16,24 +17,27 @@
 
             int unitCount = random.Next(InternalSettings.minSquadSize, InternalSettings.maxSquadSize);
 
+            List<Unit> units = UnitPool.GetData().Where((unit) => unit.squadID == 0).ToList();
+            int unitsRemaining = units.Count - unitCount;
+            if (unitsRemaining < 0) ;
+            {
+                for (int i = 0; i < MathF.Abs(unitsRemaining); i++)
+                {
+                    units.Add(UnitGenerator.GenerateUnit(UnitPool.FindFirstFreeID()));
+                }
+            }
             for (int i = 0; i < unitCount; i++)
             {
-                Unit uniqueUnit = GetUniqueUnit(random);
+                Console.WriteLine("ID: " + id + " Unit Count: " + unitCount + " Units Remaining: " + units.Count);
+                Unit uniqueUnit = units[random.Next(0, units.Count)];
                 uniqueUnit.squadID = id;
                 unitIDs.Add(uniqueUnit.id);
+                units.Remove(uniqueUnit);
+                
             }
 
             return new Squad(id, starLevel, unitIDs);
         }
 
-        static Unit GetUniqueUnit(Random random)
-        {
-            int unitIndex = random.Next(0, UnitPool.GetDataCount());
-            if (UnitPool.GetDataByIndex(unitIndex).squadID == 0)
-            {
-                return UnitPool.GetDataByIndex(unitIndex);
-            }
-            return GetUniqueUnit(random);
-        }
     }
 }

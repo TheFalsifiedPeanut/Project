@@ -46,10 +46,10 @@
             data = new List<T>();
         }
         
-        public static ushort FindFirstFreeID()
+        public static ushort FindFirstFreeID(bool zeroStart = true)
         {
             bool takenID = false;
-            for (ushort i = 0; i < ushort.MaxValue; i++)
+            for (ushort i = (ushort)(zeroStart ? 0 : 1); i < ushort.MaxValue; i++)
             {
                 for (int j = 0; j < dataPool.data.Count; j++)
                 {

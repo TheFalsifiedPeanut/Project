@@ -12,7 +12,7 @@
                 dataPool = this;
                 for (int i = 0; i < initialPoolSize; i++)
                 {
-                    data.Add(AgencyGenerator.GenerateAgency(FindFirstFreeID()));
+                    data.Add(AgencyGenerator.GenerateAgency(FindFirstFreeID(false)));
                 }
             }
         }
