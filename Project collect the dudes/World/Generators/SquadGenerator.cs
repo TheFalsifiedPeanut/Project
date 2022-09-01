@@ -28,7 +28,6 @@
             }
             for (int i = 0; i < unitCount; i++)
             {
-                Console.WriteLine("ID: " + id + " Unit Count: " + unitCount + " Units Remaining: " + units.Count);
                 Unit uniqueUnit = units[random.Next(0, units.Count)];
                 uniqueUnit.squadID = id;
                 unitIDs.Add(uniqueUnit.id);

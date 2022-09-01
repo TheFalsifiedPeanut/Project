@@ -20,5 +20,11 @@
         {
             GetData().Add(agency);
         }
+        protected override Agency GetDefault(ushort id)
+        {
+            Agency agency = AgencyGenerator.GenerateAgency(id);
+            data.Add(agency);
+            return agency;
+        }
     }
 }

@@ -107,7 +107,6 @@ namespace Collect_Dudes.World.Generators
                         }
                         break;
                 }
-
                 List<Unit> unitRange = agency.squad.GetUnitsAsUnit().Where(unit => unit.starLevel == unitLevel && unit.teamID != 0).ToList();
                 Unit newUnit;
                 if (unitRange.Count > 0)

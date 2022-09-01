@@ -21,5 +21,12 @@
         {
             GetData().Add(unit);
         }
+
+        protected override Unit GetDefault(ushort id)
+        {
+            Unit unit = UnitGenerator.GenerateUnit(id);
+            data.Add(unit);
+            return unit;
+        }
     }
 }

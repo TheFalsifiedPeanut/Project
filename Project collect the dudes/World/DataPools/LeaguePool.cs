@@ -107,5 +107,10 @@
             }
 
         }
+
+        protected override League GetDefault(ushort id)
+        {
+            return default(League);
+        }
     }
 }

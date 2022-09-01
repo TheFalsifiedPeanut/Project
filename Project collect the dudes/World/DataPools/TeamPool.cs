@@ -138,5 +138,10 @@
                 }
             }
         }
+
+        protected override Team GetDefault(ushort id)
+        {
+            return default(Team);
+        }
     }
 }

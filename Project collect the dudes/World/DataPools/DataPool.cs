@@ -32,7 +32,7 @@
                     return dataPool.data[i];
                 }
             }
-            return default;
+            return dataPool.GetDefault(id);
         }
 
         public static List<T> GetData()
@@ -70,5 +70,6 @@
             }
             return 0;
         }
+        protected abstract T GetDefault(ushort id);
     }
 }

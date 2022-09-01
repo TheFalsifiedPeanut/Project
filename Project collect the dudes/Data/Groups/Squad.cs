@@ -6,6 +6,7 @@
     using System.Linq;
     using Units;
     using Units.Enums;
+    using System;
 
     /// <summary>
     /// A squad represents a group of units belonging to an agency.
