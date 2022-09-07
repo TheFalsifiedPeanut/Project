@@ -9,9 +9,9 @@
         public TeamPool() : base()
         {
             Random random = new Random();
-
             if (dataPool is null)
             {
+                Console.WriteLine("TeamPool");
                 dataPool = this;
                 for (int i = 0; i < AgencyPool.GetDataCount(); i++)
                 {
@@ -45,7 +45,7 @@
 
                                 if (j == 0)
                                 {
-                                    TeamGenerator.GenerateTeam(id, random.Next(1,4), agency);
+                                    TeamGenerator.GenerateTeam(id, random.Next(1, 4), agency);
                                 }
                                 else if (j == 1)
                                 {
@@ -59,7 +59,7 @@
                             }
                             break;
                         case 2:
-                            
+
                             for (int j = 0; j < teamCount; j++)
                             {
                                 ushort id = FindFirstFreeID();
@@ -79,7 +79,7 @@
                                 {
                                     TeamGenerator.GenerateTeam(id, random.Next(2, 4), agency);
                                 }
-                                
+
                             }
                             break;
                         case 3:
@@ -136,6 +136,7 @@
                             break;
                     }
                 }
+
             }
         }
 

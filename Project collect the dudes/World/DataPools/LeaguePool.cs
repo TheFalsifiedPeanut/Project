@@ -13,99 +13,105 @@
     {
         public LeaguePool() : base()
         {
-            League bronzeLeague = new League((ushort)LeagueIDs.Bronze, "Bronze League", 16);
-            League silverLeague = new League((ushort)LeagueIDs.Silver, "Silver League", 16);
-            League goldLeague = new League((ushort)LeagueIDs.Gold, "Gold League", 16);
-            League platniumLeague = new League((ushort)LeagueIDs.Platinum, "Platinum League", 16);
-
-            data.Add(bronzeLeague);
-            data.Add(silverLeague);
-            data.Add(goldLeague);
-            data.Add(platniumLeague);
-
-            List<Team> teams = TeamPool.GetData().Where((team) => team.starLevel == (int)StarLevel.ONE || team.starLevel == (int)StarLevel.TWO).ToList();
-
-            Random random = new Random();
-            for (int i = 0; i < bronzeLeague.GetLeagueSize(); i++)
+            if (dataPool is null)
             {
-                if (teams.Count > 0)
+                dataPool = this;
+                League bronzeLeague = new League((ushort)LeagueIDs.Bronze, "Bronze League", 16);
+                League silverLeague = new League((ushort)LeagueIDs.Silver, "Silver League", 16);
+                League goldLeague = new League((ushort)LeagueIDs.Gold, "Gold League", 16);
+                League platniumLeague = new League((ushort)LeagueIDs.Platinum, "Platinum League", 16);
+
+                data.Add(bronzeLeague);
+                data.Add(silverLeague);
+                data.Add(goldLeague);
+                data.Add(platniumLeague);
+
+                List<Team> teams = TeamPool.GetData().Where((team) => team.starLevel == (int)StarLevel.ONE || team.starLevel == (int)StarLevel.TWO).ToList();
+
+                Random random = new Random();
+                for (int i = 0; i < bronzeLeague.GetLeagueSize(); i++)
                 {
-                    Team team = teams[random.Next(0, teams.Count)];
-                    bronzeLeague.AddTeam(team.id);
-                    teams.Remove(team);
+                    if (teams.Count > 0)
+                    {
+                        Team team = teams[random.Next(0, teams.Count)];
+                        Console.WriteLine(team.id);
+                        bronzeLeague.AddTeam(team.id);
+                        teams.Remove(team);
+                    }
+                    else
+                    {
+                        Console.WriteLine(TeamPool.FindFirstFreeID(false));
+                        bronzeLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(false), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID())).id);
+
+                    }
+
+
                 }
-                else
+                Console.ReadLine();
+                for (int i = 0; i < silverLeague.GetLeagueSize(); i++)
                 {
-                    bronzeLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID())).id);
+                    if (teams.Count > 0)
+                    {
+                        Team team = teams[random.Next(0, teams.Count)];
+                        silverLeague.AddTeam(team.id);
+                        teams.Remove(team);
+                    }
+                    else
+                    {
+                        silverLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
+
+                    }
+
 
                 }
+                for (int i = 0; i < goldLeague.GetLeagueSize(); i++)
+                {
+                    if (teams.Count > 0)
+                    {
+                        Team team = teams[random.Next(0, teams.Count)];
+                        goldLeague.AddTeam(team.id);
+                        teams.Remove(team);
+                    }
+                    else
+                    {
+                        goldLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
+
+                    }
 
 
+                }
+                for (int i = 0; i < platniumLeague.GetLeagueSize(); i++)
+                {
+                    if (teams.Count > 0)
+                    {
+                        Team team = teams[random.Next(0, teams.Count)];
+                        platniumLeague.AddTeam(team.id);
+                        teams.Remove(team);
+                    }
+                    else
+                    {
+                        platniumLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
+
+                    }
+
+
+                }
+                for (int i = 0; i < bronzeLeague.GetLeagueSize(); i++)
+                {
+                    if (teams.Count > 0)
+                    {
+                        Team team = teams[random.Next(0, teams.Count)];
+                        bronzeLeague.AddTeam(team.id);
+                        teams.Remove(team);
+                    }
+                    else
+                    {
+                        bronzeLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
+                    }
+
+
+                }
             }
-            for (int i = 0; i < silverLeague.GetLeagueSize(); i++)
-            {
-                if (teams.Count > 0)
-                {
-                    Team team = teams[random.Next(0, teams.Count)];
-                    silverLeague.AddTeam(team.id);
-                    teams.Remove(team);
-                }
-                else
-                {
-                    silverLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
-                    
-                }
-
-                
-            }
-            for (int i = 0; i < goldLeague.GetLeagueSize(); i++)
-            {
-                if (teams.Count > 0)
-                {
-                    Team team = teams[random.Next(0, teams.Count)];
-                    goldLeague.AddTeam(team.id);
-                    teams.Remove(team);
-                }
-                else
-                {
-                    goldLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
-                    
-                }
-
-                
-            }
-            for (int i = 0; i < platniumLeague.GetLeagueSize(); i++)
-            {
-                if (teams.Count > 0)
-                {
-                    Team team = teams[random.Next(0, teams.Count)];
-                    platniumLeague.AddTeam(team.id);
-                    teams.Remove(team);
-                }
-                else
-                {
-                    platniumLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
-                    
-                }
-
-                
-            }
-            for (int i = 0; i < bronzeLeague.GetLeagueSize(); i++)
-            {
-                if (teams.Count > 0)
-                {
-                    Team team = teams[random.Next(0, teams.Count)];
-                    bronzeLeague.AddTeam(team.id);
-                    teams.Remove(team);
-                }
-                else
-                {
-                    bronzeLeague.AddTeam(TeamGenerator.GenerateTeam(TeamPool.FindFirstFreeID(), random.Next(1, 3), AgencyGenerator.GenerateAgency(AgencyPool.FindFirstFreeID(false))).id);
-                }
-
-                
-            }
-
         }
 
         protected override League GetDefault(ushort id)

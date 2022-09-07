@@ -120,8 +120,9 @@ namespace Collect_Dudes.World.Generators
                 newUnit.teamID = id;
                 units.Add(newUnit.id);
             }
-
-            return new Team(id, "Team " + id, agency.id, starLevel, units);
+            Team team = new Team(id, "Team " + id, agency.id, starLevel, units);
+            TeamPool.GetData().Add(team);
+            return team;
         }
     }
 }
